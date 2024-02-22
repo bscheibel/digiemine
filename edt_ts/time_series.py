@@ -16,18 +16,15 @@ import pandas as pd
 import numpy as np
 import math
 import warnings
-from scipy.stats.stats import pearsonr
-import edt_main
-
 warnings.filterwarnings("ignore", category=DeprecationWarning)
-import sys
 from tsfresh import extract_features, select_features
-from edtts import learn_tree as tc
+from edt_ts import learn_tree as tc
 from edt import edt_main as em
+import swifter
 
 def prepare_dataset(df, id, variable_interest):
     df = df.groupby(id).agg({list, "last"})
-    #print(df)
+    print(df)
     df.columns = [' '.join(col).replace(" ", "") for col in df.columns]
     df[variable_interest + 'list'] = df[variable_interest + 'list'].swifter.apply(np.array)
     X = []
@@ -57,12 +54,6 @@ def generate_interval_features(df, n, variable_interest):
         df[name + "_wthavg"] = df.swifter.apply(lambda row: np.average(row[name]), axis=1)
         df[name + "_sum"] = df.swifter.apply(lambda row: sum(row[name]), axis=1)
         df[name + "_std"] = df.swifter.apply(lambda row: np.std(row[name]), axis=1)
-        # try:
-        #     df[name + "_slope"] = df.swifter.apply(lambda row: math.sqrt(row[name + "_max"] - row[name + "_min"]) ** 2 + n ** 2,
-        #                                    axis=1) / n  # wurzel ((max-min)2 + n2)
-        #     df[name + "_percentchange"] = (df[name + "_max"] - df[name + "_min"]) / df[name + "_min"]  # (max-min)/min
-        # except:
-        #     pass
     return df
 
 
@@ -180,17 +171,13 @@ def sort_array_ok_nok(df, id, variable_result, variable_interest, result_column)
             uuids_complete.append(uuid)
             if (len(values) > 0):
                 candidates[uuid] = [result, values]
-    #print("Array NOK: ", len(array_nok))
-    #print("Array OK: ", len(array_ok))
     return candidates, array_ok, array_nok, uuids_complete
 
 
 def pipeline(use_case, df, id, variable_result,results,result_column, variable_interest=None, interval=None):
     candidates, array_ok, array_nok, uuids_complete = sort_array_ok_nok(df, id, variable_result, variable_interest, result_column)
-    #candidate_vars = get_candidate_variables(df, id)
     candidate_vars = ["value"]
     candidate_vars = [x for x in candidate_vars if x != result_column]
-    #print("Reoccuring variables/Time Series Candidates: ", (candidate_vars))
     num_cols_all = []
     df_og = df
     df_reset = df
@@ -219,7 +206,6 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
         result_column = result_column_og + "last"
         max_accuracy = 0
 
-        # Interval-Based:
         if not interval:
             interval = [2, 5, 10]
         else:
@@ -285,10 +271,6 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
         for v in var_interval:
             num_cols.append(v)
         num_cols = [x for x in num_cols if x != id]
-        #if len(candidate_vars) == 1:
-        #   df_og = df
-        #    num_cols_all = num_cols
-        #else:
         df_og = pd.merge(df, df_og, on=id, how="outer", suffixes=('', '_y'))
         num_cols_all.extend(num_cols)
 
@@ -301,7 +283,6 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
             y_var_bool.append(0)
     df_corr = df_og
     df_corr["result"] = y_var_bool
-    #print(df_corr)
     corr = df_corr.corr()["result"].abs()
     corr = corr[corr > 0.1]
     colum = corr.index
@@ -310,20 +291,12 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
     df_onlyrel[result_column] = df_corr[result_column]
     df_corr = df_onlyrel
     df_corr.drop("result", axis=1, inplace=True)
-    #print(df_corr)
     _, _, rules_ts = tc.learn_tree(df_corr, result_column, num_cols_all, variable_result, results, True)
     print("\n---------------------------------------------------------------------------------\nedt-ts and bdt combined")
     rules_digiemine = em.define(df_og, result_column, True)
     return rules_ts, rules_digiemine
-def main(file):
-    use_case = "running"
-    file = file
-    id = "uuid"
-    results = ['ok', 'nok']
-    result_column = 'status'
-    variable_result = 'nok'
+def main(file, use_case, id, variable_result, results, result_column, variable_interest):
 
-    variable_interest = "value"
     df = pd.read_csv(file)
     df = df.rename(columns={"timestamp": "time:timestamp"})
     rules_ts, rules_digiemine= pipeline(use_case, df, id, variable_result, results, result_column, variable_interest)

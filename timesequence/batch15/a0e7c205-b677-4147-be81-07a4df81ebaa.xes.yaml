@@ -1,0 +1,738 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: '2794'
+    cpee:name: Spawn GV12 Production
+    cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+---
+event:
+  concept:instance: '2794'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    - artefacts
+    data_values:
+      info: Spawn GV12 Production
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+      artefacts: '[ { "group": "Products", "name": "!attributes.info" } ]'
+    data_received: 
+  time:timestamp: '2019-12-10T21:57:50.890+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - qr
+    data_values:
+      qr: "*269MFA466*TZHZE 900"
+    data_received: 
+  time:timestamp: '2019-12-10T21:57:50.939+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - timeout
+    - start_instance
+    - start_url
+    - when
+    - measure
+    - fetch_microvu
+    - ipc_send
+    data_values:
+      timeout: http://gruppe.wst.univie.ac.at/~mangler/services/timeout.php
+      start_instance: https://centurio.work/flow/start/instance/
+      start_url: https://centurio.work/flow/start/url/
+      when: https://centurio.work/data/dpnorth/when/
+      measure: https://centurio.work/out/measure_MaxxTurn45/tasks/
+      fetch_microvu: https://centurio.work/ing/correlators/microvu/fetch/
+      ipc_send: https://centurio.work/ing/correlators/message/send/
+    data_received: 
+  time:timestamp: '2019-12-10T21:57:50.949+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - qr
+    data_values:
+      qr: "*268MFA466*TZHZE 015"
+    data_received: 
+  time:timestamp: '2019-12-10T21:57:51.122+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Turn
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: 92348a2349fdd7ba7def5e3c57fb1588
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: GV12 Turn Production
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/Production%20Vx.xml
+    - name: init
+      value: '{ "machine": "MaxxTurn45", "program": "_N_GV12VAVELIFTER_NEU_MPF", "program_path":
+        "Program/progName1", "trigger": "State/progStatus", "trigger_start": 3, "trigger_pause":
+        2, "trigger_end": 5, "event_batch": 333, "label": "GV12 Turn Machining", "stream_handling":
+        "https://centurio.work/customers/prime/stream_handling/matthias_machining.xml"
+        }'
+    data_received: 
+  time:timestamp: '2019-12-10T21:57:51.786+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Turn
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: 92348a2349fdd7ba7def5e3c57fb1588
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2796'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2796
+        CPEE-INSTANCE-UUID: '09c22754-a680-4d7f-b1f8-8661c7095c8e'
+        CPEE-STATE: running
+  time:timestamp: '2019-12-10T21:57:53.987+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Turn
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: 92348a2349fdd7ba7def5e3c57fb1588
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2796'
+      CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2796
+      CPEE-INSTANCE-UUID: '09c22754-a680-4d7f-b1f8-8661c7095c8e'
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-12-10T21:57:54.138+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Turn
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: 92348a2349fdd7ba7def5e3c57fb1588
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2796'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2796
+        CPEE-INSTANCE-UUID: '09c22754-a680-4d7f-b1f8-8661c7095c8e'
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-12-10T21:57:54.409+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Turn
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: 92348a2349fdd7ba7def5e3c57fb1588
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2796'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2796
+        CPEE-INSTANCE-UUID: '09c22754-a680-4d7f-b1f8-8661c7095c8e'
+        CPEE-STATE: finished
+        machine: MaxxTurn45
+        program: _N_GV12VAVELIFTER_NEU_MPF
+        program_path: Program/progName1
+        trigger: State/progStatus
+        trigger_start: 3
+        trigger_pause: 2
+        trigger_end: 5
+        label: GV12 Turn Machining
+        event_batch: 333
+        stream_handling: https://centurio.work/customers/prime/stream_handling/matthias_machining.xml
+        queue: ''
+        finished: 'yes'
+  time:timestamp: '2019-12-10T22:01:28.625+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Turn
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: 92348a2349fdd7ba7def5e3c57fb1588
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-12-10T22:01:28.639+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Signal Machining End
+  concept:endpoint: https://centurio.work/ing/correlators/message/send/
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: 9b15f2a609fab0084ea48826c30dea74
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: id
+      value: gv12turnready
+    - name: message
+      value: ok
+    - name: ttl
+      value: '0'
+    data_received: 
+  time:timestamp: '2019-12-10T22:01:28.709+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Signal Machining End
+  concept:endpoint: https://centurio.work/ing/correlators/message/send/
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: 9b15f2a609fab0084ea48826c30dea74
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-12-10T22:01:28.953+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Measure with Keyence
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: '07896f36d137497024c11b14592d0e76'
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: GV12 Keyence Measurement
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/Production%20Vx.xml
+    - name: init
+      value: '{ "machine": "keyence", "program": "gfrast1", "program_path": "program",
+        "trigger": "state", "trigger_start": "active", "trigger_pause": "notpossible",
+        "trigger_end": "inactive", "event_batch": 10, "label": "GV12 Keyence Measuring",
+        "stream_handling": "https://centurio.work/customers/prime/stream_handling/matthias_measuring.xml"
+        }'
+    - name: endpoints
+      value: 
+    data_received: 
+  time:timestamp: '2019-12-10T22:01:29.145+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Signal Machining End
+  concept:endpoint: https://centurio.work/ing/correlators/message/send/
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: 9b15f2a609fab0084ea48826c30dea74
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2019-12-10T22:01:29.208+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Measure with Keyence
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: '07896f36d137497024c11b14592d0e76'
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2808'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2808
+        CPEE-INSTANCE-UUID: ebb2502f-c166-4e4b-95f9-973f951ff13a
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-12-10T22:01:31.299+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Measure with Keyence
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: '07896f36d137497024c11b14592d0e76'
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2808'
+      CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2808
+      CPEE-INSTANCE-UUID: ebb2502f-c166-4e4b-95f9-973f951ff13a
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-12-10T22:01:31.362+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Measure with Keyence
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: '07896f36d137497024c11b14592d0e76'
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2808'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2808
+        CPEE-INSTANCE-UUID: ebb2502f-c166-4e4b-95f9-973f951ff13a
+        CPEE-STATE: running
+  time:timestamp: '2019-12-10T22:01:32.027+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Measure with Keyence
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: '07896f36d137497024c11b14592d0e76'
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2808'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2808
+        CPEE-INSTANCE-UUID: ebb2502f-c166-4e4b-95f9-973f951ff13a
+        CPEE-STATE: finished
+        machine: keyence
+        program: gfrast1
+        program_path: program
+        trigger: state
+        trigger_start: active
+        trigger_pause: notpossible
+        trigger_end: inactive
+        label: GV12 Keyence Measuring
+        event_batch: 10
+        stream_handling: https://centurio.work/customers/prime/stream_handling/matthias_measuring.xml
+        queue: ''
+        finished: 'yes'
+  time:timestamp: '2019-12-10T22:03:35.376+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Measure with Keyence
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a2
+  cpee:activity: a2
+  cpee:activity_uuid: '07896f36d137497024c11b14592d0e76'
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-12-10T22:03:35.669+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Measure with MicroVu
+  concept:endpoint: https://centurio.work/ing/correlators/microvu/fetch/
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 8b971f33b12510fdfa66e3f36a7e8415
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: qr
+      value: "*268MFA466*TZHZE 015"
+    data_received: 
+  time:timestamp: '2019-12-10T22:03:36.466+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Measure with MicroVu
+  concept:endpoint: https://centurio.work/ing/correlators/microvu/fetch/
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 8b971f33b12510fdfa66e3f36a7e8415
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: text/html
+      data: 1
+  time:timestamp: '2019-12-10T22:03:36.814+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Measure with MicroVu
+  concept:endpoint: https://centurio.work/ing/correlators/microvu/fetch/
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 8b971f33b12510fdfa66e3f36a7e8415
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        raw:
+          OCR 3:
+            Text:
+            - '"*268MFA466*TZHZE 015"'
+            Datum/Zeit:
+            - '"2019-12-11 13:54:49"'
+          Fläche Ref-A:
+            Ebenheit:
+            - '0.0120'
+            - '0.0050'
+            - '0.0070'
+            Standardabweichung:
+            - '0.0033'
+          Fläche Bund:
+            Ebenheit:
+            - '0.0166'
+            - '0.0100'
+            - '0.0066'
+            Standardabweichung:
+            - '0.0035'
+            Parallelität:
+            - '0.0290'
+            - '0.0100'
+            - '0.0190'
+          Zylinder Ø4,5-B:
+            Radius:
+            - '2.2679'
+            - '2.2500'
+            - ''
+            - ''
+            - '0.0179'
+            - ''
+            Durchmesser:
+            - '4.5358'
+            - '4.5000'
+            - '0.0400'
+            - "-0.0280"
+            - '0.0358'
+            - ''
+            Zylinderform:
+            - '0.0211'
+            - '0.0100'
+            - '0.0111'
+            Standardabweichung:
+            - '0.0041'
+            Rechtwinkligkeit:
+            - '0.0038'
+            - '0.0100'
+            - ''
+          Kreis Ø19,2-1:
+            Mitte Z:
+            - '3.7977'
+            - '3.8000'
+            - '0.0500'
+            - '0.0500'
+            - "-0.0023"
+            - ''
+            Radius:
+            - '9.5852'
+            - '9.6000'
+            - ''
+            - ''
+            - "-0.0148"
+            - ''
+            Durchmesser:
+            - '19.1705'
+            - '19.2000'
+            - '0.0000'
+            - '0.0500'
+            - "-0.0295"
+            - ''
+            Standardabweichung:
+            - '0.0030'
+          Kreis Ø19,2-2:
+            Mitte Z:
+            - '1.1984'
+            - '1.2000'
+            - '0.0500'
+            - '0.0500'
+            - "-0.0016"
+            - ''
+            Radius:
+            - '9.5849'
+            - '9.6000'
+            - ''
+            - ''
+            - "-0.0151"
+            - ''
+            Durchmesser:
+            - '19.1698'
+            - '19.2000'
+            - '0.0000'
+            - '0.0500'
+            - "-0.0302"
+            - ''
+            Standardabweichung:
+            - '0.0039'
+          Zylinder 19,2-CZ:
+            Radius:
+            - '9.5851'
+            - '9.5851'
+            - ''
+            - ''
+            - '0.0000'
+            - ''
+            Durchmesser:
+            - '19.1702'
+            - '19.1702'
+            - ''
+            - ''
+            - '0.0000'
+            - ''
+            Zylinderform:
+            - '0.0167'
+            Standardabweichung:
+            - '0.0035'
+            Konzentrizität:
+            - '0.0407'
+            - '0.0500'
+            - ''
+          Distanz Z9,3:
+            Distanz Z:
+            - '9.3254'
+            - '9.3000'
+            - '0.1000'
+            - "-0.0000"
+            - '0.0254'
+            - ''
+          Distanz Z4,8:
+            Distanz Z:
+            - '4.7818'
+            - '4.8000'
+            - '0.0500'
+            - '0.0500'
+            - "-0.0182"
+            - ''
+        results:
+          Fläche Ref-A:
+            Ebenheit:
+              status: nok
+              on_scale_from_zero_to_one: 2.4
+          Fläche Bund:
+            Ebenheit:
+              status: nok
+              on_scale_from_zero_to_one: 1.66
+            Parallelität:
+              status: nok
+              on_scale_from_zero_to_one: 2.9000000000000004
+          Zylinder Ø4,5-B:
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.6500000000000148
+            Zylinderform:
+              status: nok
+              on_scale_from_zero_to_one: 2.11
+            Rechtwinkligkeit:
+              status: ok
+              on_scale_from_zero_to_one: 0.38
+          Kreis Ø19,2-1:
+            Mitte Z:
+              status: ok
+              on_scale_from_zero_to_one: 0.47700000000000026
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.4100000000000334
+          Kreis Ø19,2-2:
+            Mitte Z:
+              status: ok
+              on_scale_from_zero_to_one: 0.48399999999999954
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.3959999999999952
+          Zylinder 19,2-CZ:
+            Konzentrizität:
+              status: ok
+              on_scale_from_zero_to_one: 0.8140000000000001
+          Distanz Z9,3:
+            Distanz Z:
+              status: ok
+              on_scale_from_zero_to_one: 0.2539999999999951
+          Distanz Z4,8:
+            Distanz Z:
+              status: ok
+              on_scale_from_zero_to_one: 0.3179999999999972
+        pdf: https://centurio.work/ing/correlators/microvu/data/KjI2OE1GQTQ2NipUWkhaRQ_015.pdf
+  time:timestamp: '2019-12-26T13:08:25.305+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Measure with MicroVu
+  concept:endpoint: https://centurio.work/ing/correlators/microvu/fetch/
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 8b971f33b12510fdfa66e3f36a7e8415
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - qc2
+    - qc2_success
+    data_values:
+      qr: "*268MFA466*TZHZE 015"
+      qc2:
+        Zylinder Ø4,5-B:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.6500000000000148
+          Zylinderform:
+            status: nok
+            on_scale_from_zero_to_one: 2.11
+          Rechtwinkligkeit:
+            status: ok
+            on_scale_from_zero_to_one: 0.38
+        Kreis Ø19,2-1:
+          Mitte Z:
+            status: ok
+            on_scale_from_zero_to_one: 0.47700000000000026
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.4100000000000334
+        Kreis Ø19,2-2:
+          Mitte Z:
+            status: ok
+            on_scale_from_zero_to_one: 0.48399999999999954
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.3959999999999952
+        Zylinder 19,2-CZ: {}
+        Distanz Z9,3:
+          Distanz Z:
+            status: ok
+            on_scale_from_zero_to_one: 0.2539999999999951
+        Distanz Z4,8:
+          Distanz Z:
+            status: ok
+            on_scale_from_zero_to_one: 0.3179999999999972
+      qc2_success: false
+    data_received: 
+  time:timestamp: '2019-12-26T13:08:25.367+01:00'
+---
+event:
+  concept:instance: '2794'
+  concept:name: Measure with MicroVu
+  concept:endpoint: https://centurio.work/ing/correlators/microvu/fetch/
+  id:id: a3
+  cpee:activity: a3
+  cpee:activity_uuid: 8b971f33b12510fdfa66e3f36a7e8415
+  cpee:instance: a0e7c205-b677-4147-be81-07a4df81ebaa
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-12-26T13:08:25.389+01:00'

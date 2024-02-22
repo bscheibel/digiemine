@@ -1,0 +1,955 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: 2384
+    cpee:name: Spawn Turm Production
+    cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+---
+event:
+  concept:instance: 2384
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - qr
+    data_values:
+      qr: "*269MFA466*TZHZE 900"
+  time:timestamp: '2020-11-10T17:04:53.004+01:00'
+---
+event:
+  concept:instance: 2384
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - timeout
+    - start_instance
+    - start_url
+    - measure
+    - fetch_microvu
+    - ipc_send
+    data_values:
+      timeout: http://gruppe.wst.univie.ac.at/~mangler/services/timeout.php
+      start_instance: https://centurio.work/flow/start/instance/
+      start_url: https://centurio.work/flow-test/start/url/
+      measure: https://centurio.work/out/measure_MaxxTurn45/tasks/
+      fetch_microvu: https://centurio.work/ing/correlators/microvu/fetch/
+      ipc_send: https://centurio.work/ing/correlators/message/send/
+  time:timestamp: '2020-11-10T17:04:53.033+01:00'
+---
+event:
+  concept:instance: 2384
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    - artefacts
+    data_values:
+      info: Spawn Turm Production
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+      artefacts: '[ { "group": "Products", "name": "!attributes.info" } ]'
+  time:timestamp: '2020-11-10T17:04:53.044+01:00'
+---
+event:
+  concept:instance: 2384
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - qr
+    data_values:
+      qr: "*268MFA466*TZHZE 024"
+  time:timestamp: '2020-11-10T17:04:53.475+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Turn
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: Turm Turn Production
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/r/turm-v2/Production%20Vx.xml
+    - name: init
+      value: '{ "machine": "MaxxTurn45", "program": "_N_TURM_PSC1_MPF", "program_path":
+        "Program/progName1", "trigger": "State/progStatus", "trigger_start": 3, "trigger_pause":
+        2, "trigger_end": 5, "event_batch": 333, "label": "Turm Turn Machining", "stream_handling":
+        "https://centurio.work/customers/prime/stream_handling/matthias_machining.xml",
+        "qr": "*268MFA466*TZHZE 024" }'
+  time:timestamp: '2020-11-10T17:04:56.476+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Turn
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2386'
+      CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2386
+      CPEE-INSTANCE-UUID: 6b778322-4b91-4c22-ad9c-6f7388c5def9
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2020-11-10T17:04:59.637+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Turn
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2386'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2386
+        CPEE-INSTANCE-UUID: 6b778322-4b91-4c22-ad9c-6f7388c5def9
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2020-11-10T17:04:59.720+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Turn
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2386'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2386
+        CPEE-INSTANCE-UUID: 6b778322-4b91-4c22-ad9c-6f7388c5def9
+        CPEE-STATE: running
+  time:timestamp: '2020-11-10T17:05:02.840+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Turn
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2386'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2386
+        CPEE-INSTANCE-UUID: 6b778322-4b91-4c22-ad9c-6f7388c5def9
+        CPEE-STATE: finished
+        finished: 'yes'
+        machine: MaxxTurn45
+        program: _N_TURM_PSC1_MPF
+        queue: ''
+        program_path: Program/progName1
+        trigger: State/progStatus
+        trigger_start: 3
+        trigger_pause: 2
+        trigger_end: 5
+        event_batch: 333
+        label: Turm Turn Machining
+        stream_handling: https://centurio.work/customers/prime/stream_handling/matthias_machining.xml
+        qr: "*268MFA466*TZHZE 024"
+  time:timestamp: '2020-11-10T17:07:45.697+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Turn
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T17:07:45.731+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Signal Machining End
+  id:id: a4
+  cpee:activity: a4
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: id
+      value: turmturnready
+    - name: message
+      value: ok
+    - name: ttl
+      value: '340'
+  time:timestamp: '2020-11-10T17:07:45.765+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Signal Machining End
+  id:id: a4
+  cpee:activity: a4
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2020-11-10T17:07:45.919+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Signal Machining End
+  id:id: a4
+  cpee:activity: a4
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T17:07:45.948+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with Keyence
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: Turm Keyence Measurement
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/r/turm-v2/Production%20Vx.xml
+    - name: init
+      value: '{ "machine": "keyence", "program": "gfrast1", "program_path": "program",
+        "trigger": "state", "trigger_start": "active", "trigger_pause": "notpossible",
+        "trigger_end": "inactive", "event_batch": 333, "label": "Turm Keyence Measuring",
+        "stream_handling": "https://centurio.work/customers/prime/stream_handling/matthias_measuring.xml",
+        "qr": "*268MFA466*TZHZE 024" }'
+    - name: endpoints
+      value: 
+  time:timestamp: '2020-11-10T17:07:45.984+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with Keyence
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2396'
+      CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2396
+      CPEE-INSTANCE-UUID: fb0e6a3d-247b-49c1-8bcb-0e0b7313f56f
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2020-11-10T17:07:46.388+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with Keyence
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2396'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2396
+        CPEE-INSTANCE-UUID: fb0e6a3d-247b-49c1-8bcb-0e0b7313f56f
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2020-11-10T17:07:46.433+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with Keyence
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2396'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2396
+        CPEE-INSTANCE-UUID: fb0e6a3d-247b-49c1-8bcb-0e0b7313f56f
+        CPEE-STATE: running
+  time:timestamp: '2020-11-10T17:07:47.756+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with Keyence
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2396'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2396
+        CPEE-INSTANCE-UUID: fb0e6a3d-247b-49c1-8bcb-0e0b7313f56f
+        CPEE-STATE: finished
+        finished: 'yes'
+        machine: keyence
+        program: gfrast1
+        queue: ''
+        program_path: program
+        trigger: state
+        trigger_start: active
+        trigger_pause: notpossible
+        trigger_end: inactive
+        event_batch: 333
+        label: Turm Keyence Measuring
+        stream_handling: https://centurio.work/customers/prime/stream_handling/matthias_measuring.xml
+        qr: "*268MFA466*TZHZE 024"
+  time:timestamp: '2020-11-10T17:13:56.889+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with Keyence
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T17:13:56.932+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Signal Keyence End
+  id:id: a6
+  cpee:activity: a6
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: id
+      value: turmmeasureready
+    - name: message
+      value: ok
+    - name: ttl
+      value: '340'
+  time:timestamp: '2020-11-10T17:13:56.968+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Signal Keyence End
+  id:id: a6
+  cpee:activity: a6
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  time:timestamp: '2020-11-10T17:13:57.094+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Signal Keyence End
+  id:id: a6
+  cpee:activity: a6
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T17:13:57.131+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with MicroVu - Upright
+  id:id: a3
+  cpee:activity: a3
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: qr
+      value: "*268MFA466*TZHZE 024"
+  time:timestamp: '2020-11-10T17:13:57.158+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with MicroVu - Upright
+  id:id: a3
+  cpee:activity: a3
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: text/html
+      data: 1
+  time:timestamp: '2020-11-10T17:13:57.252+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with MicroVu - Upright
+  id:id: a3
+  cpee:activity: a3
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        raw:
+          OCR 22:
+            Text:
+            - '"*268MFA466*TZHZE 024"'
+            Datum/Zeit:
+            - '"2020-11-11 11:08:16"'
+          Kreis A:
+            Durchmesser:
+            - '22.0056'
+            - '22.0000'
+            - '0.1000'
+            - '0.1000'
+            - '0.0056'
+            - ''
+          Kreis B:
+            Durchmesser:
+            - '18.8383'
+            - '19.0000'
+            - '0.1000'
+            - '0.1000'
+            - "-0.1617"
+            - "-0.0617"
+          Kreis C:
+            Durchmesser:
+            - '17.9686'
+            - '18.0000'
+            - '0.1000'
+            - '0.1000'
+            - "-0.0314"
+            - ''
+          Kreis D:
+            Durchmesser:
+            - '19.5434'
+            - '19.4000'
+            - '0.1000'
+            - '0.1000'
+            - '0.1434'
+            - '0.0434'
+          Kreis E:
+            Durchmesser:
+            - '21.9935'
+            - '22.0000'
+            - '0.1000'
+            - '0.1000'
+            - "-0.0065"
+            - ''
+          Kreis F:
+            Durchmesser:
+            - '19.2828'
+            - '19.6000'
+            - '0.1000'
+            - '0.1000'
+            - "-0.3172"
+            - "-0.2172"
+          Kreis G:
+            Durchmesser:
+            - '19.1093'
+            - '18.7800'
+            - '0.1000'
+            - '0.1000'
+            - '0.3293'
+            - '0.2293'
+          Kreis H:
+            Durchmesser:
+            - '21.9972'
+            - '22.0000'
+            - '0.1000'
+            - '0.1000'
+            - "-0.0028"
+            - ''
+        results:
+          Kreis A:
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.5280000000000054
+          Kreis B:
+            Durchmesser:
+              status: nok
+              on_scale_from_zero_to_one: -0.3084999999999872
+          Kreis C:
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.3429999999999951
+          Kreis D:
+            Durchmesser:
+              status: nok
+              on_scale_from_zero_to_one: 1.2169999999999885
+          Kreis E:
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.46750000000000513
+          Kreis F:
+            Durchmesser:
+              status: nok
+              on_scale_from_zero_to_one: -1.0859999999999759
+          Kreis G:
+            Durchmesser:
+              status: nok
+              on_scale_from_zero_to_one: 2.146499999999976
+          Kreis H:
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.4859999999999973
+        pdf: https://centurio.work/ing/correlators/microvu/data/KjI2OE1GQTQ2NipUWkhaRQ_024.pdf
+  time:timestamp: '2020-11-12T18:11:06.208+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with MicroVu - Upright
+  id:id: a3
+  cpee:activity: a3
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - qc2_upright
+    - qc2_upright_success
+    data_values:
+      qr: "*268MFA466*TZHZE 024"
+      qc2_upright:
+        Kreis A:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.5280000000000054
+        Kreis B:
+          Durchmesser:
+            status: nok
+            on_scale_from_zero_to_one: -0.3084999999999872
+        Kreis C:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.3429999999999951
+        Kreis D:
+          Durchmesser:
+            status: nok
+            on_scale_from_zero_to_one: 1.2169999999999885
+        Kreis E:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.46750000000000513
+        Kreis F:
+          Durchmesser:
+            status: nok
+            on_scale_from_zero_to_one: -1.0859999999999759
+        Kreis G:
+          Durchmesser:
+            status: nok
+            on_scale_from_zero_to_one: 2.146499999999976
+        Kreis H:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.4859999999999973
+      qc2_upright_success: false
+  time:timestamp: '2020-11-12T18:11:06.238+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with MicroVu - Upright
+  id:id: a3
+  cpee:activity: a3
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-12T18:11:06.255+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with MicroVu - Lying
+  id:id: a5
+  cpee:activity: a5
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: qr
+      value: "*268MFA466*TZHZE 024"
+  time:timestamp: '2020-11-12T18:11:06.282+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with MicroVu - Lying
+  id:id: a5
+  cpee:activity: a5
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: text/html
+      data: 1
+  time:timestamp: '2020-11-12T18:11:06.966+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with MicroVu - Lying
+  id:id: a5
+  cpee:activity: a5
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        raw:
+          OCR 46:
+            Text:
+            - '"*268MFA466*TZHZE 024"'
+            Datum/Zeit:
+            - '"2020-11-12 13:17:13"'
+          Kreis D:
+            Durchmesser:
+            - '22.0072'
+            - '22.0000'
+            - '0.1000'
+            - '0.1000'
+            - '0.0072'
+            - ''
+          Distanz E:
+            Distanz Z:
+            - '3.5776'
+            - '3.5000'
+            - '0.1000'
+            - '0.1000'
+            - '0.0776'
+            - ''
+          Kreis H:
+            Durchmesser:
+            - '16.0513'
+            - '16.0000'
+            - '0.1000'
+            - '0.1000'
+            - '0.0513'
+            - ''
+          Distanz I:
+            Distanz Z:
+            - '4.8889'
+            - '5.0000'
+            - '0.1000'
+            - '0.1000'
+            - "-0.1111"
+            - "-0.0111"
+          Kreis C:
+            Durchmesser:
+            - '22.0054'
+            - '22.0000'
+            - '0.1000'
+            - '0.1000'
+            - '0.0054'
+            - ''
+          Kreis B:
+            Durchmesser:
+            - '22.0056'
+            - '22.0000'
+            - '0.1000'
+            - '0.1000'
+            - '0.0056'
+            - ''
+          Kreis J:
+            Radius:
+            - '24.9820'
+            - '25.0000'
+            - '0.1000'
+            - '0.1000'
+            - "-0.0180"
+            - ''
+          Kreis A:
+            Durchmesser:
+            - '22.0057'
+            - '22.0000'
+            - '0.1000'
+            - '0.1000'
+            - '0.0057'
+            - ''
+          Distanz P:
+            Distanz Z:
+            - '50.1206'
+            - '50.0000'
+            - '0.1000'
+            - '0.1000'
+            - '0.1206'
+            - '0.0206'
+          Kreis G:
+            Durchmesser:
+            - '17.1810'
+            - '17.0000'
+            - '0.1000'
+            - '0.1000'
+            - '0.1810'
+            - '0.0810'
+          Distanz F:
+            Distanz Z:
+            - '2.0455'
+            - '2.0000'
+            - '0.1000'
+            - '0.1000'
+            - '0.0455'
+            - ''
+          Distanz L:
+            Distanz Z:
+            - '2.2051'
+            - '2.0500'
+            - '0.0100'
+            - '0.0100'
+            - '0.1551'
+            - '0.1451'
+          Kreis K:
+            Durchmesser:
+            - '18.0817'
+            - '17.0000'
+            - '0.1000'
+            - '0.1000'
+            - '1.0817'
+            - '0.9817'
+        results:
+          Kreis D:
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.5360000000000044
+          Distanz E:
+            Distanz Z:
+              status: ok
+              on_scale_from_zero_to_one: 0.8879999999999991
+          Kreis H:
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.7565000000000004
+          Distanz I:
+            Distanz Z:
+              status: nok
+              on_scale_from_zero_to_one: -0.055500000000004074
+          Kreis C:
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.5270000000000078
+          Kreis B:
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.5280000000000054
+          Kreis J:
+            Radius:
+              status: ok
+              on_scale_from_zero_to_one: 0.40999999999999787
+          Kreis A:
+            Durchmesser:
+              status: ok
+              on_scale_from_zero_to_one: 0.5285000000000042
+          Distanz P:
+            Distanz Z:
+              status: nok
+              on_scale_from_zero_to_one: 1.103000000000007
+          Kreis G:
+            Durchmesser:
+              status: nok
+              on_scale_from_zero_to_one: 1.4049999999999918
+          Distanz F:
+            Distanz Z:
+              status: ok
+              on_scale_from_zero_to_one: 0.7275000000000003
+          Distanz L:
+            Distanz Z:
+              status: nok
+              on_scale_from_zero_to_one: 8.255000000000166
+          Kreis K:
+            Durchmesser:
+              status: nok
+              on_scale_from_zero_to_one: 5.90849999999993
+        pdf: https://centurio.work/ing/correlators/microvu/data/KjI2OE1GQTQ2NipUWkhaRQ_024.pdf
+  time:timestamp: '2020-11-12T18:13:57.465+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with MicroVu - Lying
+  id:id: a5
+  cpee:activity: a5
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - qc2_lying
+    - qc2_lying_success
+    data_values:
+      qr: "*268MFA466*TZHZE 024"
+      qc2_upright:
+        Kreis A:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.5280000000000054
+        Kreis B:
+          Durchmesser:
+            status: nok
+            on_scale_from_zero_to_one: -0.3084999999999872
+        Kreis C:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.3429999999999951
+        Kreis D:
+          Durchmesser:
+            status: nok
+            on_scale_from_zero_to_one: 1.2169999999999885
+        Kreis E:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.46750000000000513
+        Kreis F:
+          Durchmesser:
+            status: nok
+            on_scale_from_zero_to_one: -1.0859999999999759
+        Kreis G:
+          Durchmesser:
+            status: nok
+            on_scale_from_zero_to_one: 2.146499999999976
+        Kreis H:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.4859999999999973
+      qc2_upright_success: false
+      qc2_lying:
+        Kreis D:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.5360000000000044
+        Distanz E:
+          Distanz Z:
+            status: ok
+            on_scale_from_zero_to_one: 0.8879999999999991
+        Kreis H:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.7565000000000004
+        Distanz I:
+          Distanz Z:
+            status: nok
+            on_scale_from_zero_to_one: -0.055500000000004074
+        Kreis C:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.5270000000000078
+        Kreis B:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.5280000000000054
+        Kreis J:
+          Radius:
+            status: ok
+            on_scale_from_zero_to_one: 0.40999999999999787
+        Kreis A:
+          Durchmesser:
+            status: ok
+            on_scale_from_zero_to_one: 0.5285000000000042
+        Distanz P:
+          Distanz Z:
+            status: nok
+            on_scale_from_zero_to_one: 1.103000000000007
+        Kreis G:
+          Durchmesser:
+            status: nok
+            on_scale_from_zero_to_one: 1.4049999999999918
+        Distanz F:
+          Distanz Z:
+            status: ok
+            on_scale_from_zero_to_one: 0.7275000000000003
+        Distanz L:
+          Distanz Z:
+            status: nok
+            on_scale_from_zero_to_one: 8.255000000000166
+        Kreis K:
+          Durchmesser:
+            status: nok
+            on_scale_from_zero_to_one: 5.90849999999993
+      qc2_lying_success: false
+  time:timestamp: '2020-11-12T18:13:57.497+01:00'
+---
+event:
+  concept:instance: 2384
+  concept:name: Measure with MicroVu - Lying
+  id:id: a5
+  cpee:activity: a5
+  cpee:instance: 95998d43-ff5d-41fa-8fcc-19d8b97e6db9
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-12T18:13:57.517+01:00'

@@ -1,0 +1,352 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: '2600'
+    cpee:name: GV12 Turn Production
+    cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+---
+event:
+  concept:instance: '2600'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - timeout
+    - start_instance
+    - start_url
+    - when
+    - delete
+    - measure
+    - decide
+    data_values:
+      timeout: http://gruppe.wst.univie.ac.at/~mangler/services/timeout.php
+      start_instance: https://centurio.work/flow/start/instance/
+      start_url: https://centurio.work/flow/start/url/
+      when: https-get://centurio.work/data/dpnorth/when/
+      delete: https-delete://centurio.work/data/dpnorth/when/
+      measure: https://centurio.work/out/measure/tasks/
+      decide: https://centurio.work/out/finished/tasks/
+    data_received: 
+  time:timestamp: '2019-11-15T14:13:51.892+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - machine
+    - program
+    - program_path
+    - trigger
+    - trigger_start
+    - trigger_pause
+    - trigger_end
+    - label
+    data_values:
+      machine: keyence
+      program: gfrast1
+      program_path: program
+      trigger: state
+      trigger_start: active
+      trigger_pause: notpossible
+      trigger_end: inactive
+      label: ''
+    data_received: 
+  time:timestamp: '2019-11-15T14:13:51.925+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    data_values:
+      info: GV12 Turn Production
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+    data_received: 
+  time:timestamp: '2019-11-15T14:13:51.943+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - machine
+    - program
+    - program_path
+    - trigger
+    - trigger_start
+    - trigger_pause
+    - trigger_end
+    - label
+    data_values:
+      machine: MaxxTurn45
+      program: _N_GV12VAVELIFTER_NEU_MPF
+      program_path: Program/progName1
+      trigger: State/progStatus
+      trigger_start: 3
+      trigger_pause: 2
+      trigger_end: 5
+      label: GV12 Turn Machining
+    data_received: 
+  time:timestamp: '2019-11-15T14:13:52.102+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: Detection Machining
+  concept:endpoint: https-get://centurio.work/data/dpnorth/when/
+  id:id: a4
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: machine
+      value: MaxxTurn45
+    - name: program_path
+      value: Program/progName1
+    - name: program_value
+      value: _N_GV12VAVELIFTER_NEU_MPF
+    - name: trigger_path
+      value: State/progStatus
+    - name: trigger_start_value
+      value: 3
+    - name: trigger_pause_value
+      value: 2
+    - name: trigger_end_value
+      value: 5
+    - name: refinement
+      value: 'no'
+    data_received: 
+  time:timestamp: '2019-11-15T14:13:52.752+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: GV12 Turn Machining
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/Machining%20V2.xml
+    - name: init
+      value: '{ "queue": "MaxxTurn45/1573823651.9318335" }'
+    data_received: 
+  time:timestamp: '2019-11-15T14:14:13.114+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: Detection Machining
+  concept:endpoint: https-get://centurio.work/data/dpnorth/when/
+  id:id: a4
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: text
+      mimetype: text/plain
+      data: MaxxTurn45/1573823651.9318335
+  time:timestamp: '2019-11-15T14:14:13.119+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: Detection Machining
+  concept:endpoint: https-get://centurio.work/data/dpnorth/when/
+  id:id: a4
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-15T14:14:13.186+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: Detection Machining
+  concept:endpoint: https-get://centurio.work/data/dpnorth/when/
+  id:id: a4
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - queue
+    data_values:
+      machine: MaxxTurn45
+      program: _N_GV12VAVELIFTER_NEU_MPF
+      program_path: Program/progName1
+      trigger: State/progStatus
+      trigger_start: 3
+      trigger_pause: 2
+      trigger_end: 5
+      label: GV12 Turn Machining
+      queue: MaxxTurn45/1573823651.9318335
+    data_received: 
+  time:timestamp: '2019-11-15T14:14:13.205+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2607'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2607
+        CPEE-INSTANCE-UUID: d5acbdcb-e048-4ad4-8a2a-c5260f015ce7
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-11-15T14:14:15.445+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2607'
+      CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2607
+      CPEE-INSTANCE-UUID: d5acbdcb-e048-4ad4-8a2a-c5260f015ce7
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-11-15T14:14:15.460+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2607'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2607
+        CPEE-INSTANCE-UUID: d5acbdcb-e048-4ad4-8a2a-c5260f015ce7
+        CPEE-STATE: running
+  time:timestamp: '2019-11-15T14:14:19.801+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2607'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2607
+        CPEE-INSTANCE-UUID: d5acbdcb-e048-4ad4-8a2a-c5260f015ce7
+        CPEE-STATE: finished
+        queue: MaxxTurn45/1573823651.9318335
+  time:timestamp: '2019-11-15T14:17:56.513+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-15T14:17:56.532+01:00'
+---
+event:
+  concept:instance: '2600'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2fc11f4b-789c-41ac-82da-a70fec915d36
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - finished
+    - queue
+    data_values:
+      machine: MaxxTurn45
+      program: _N_GV12VAVELIFTER_NEU_MPF
+      program_path: Program/progName1
+      trigger: State/progStatus
+      trigger_start: 3
+      trigger_pause: 2
+      trigger_end: 5
+      label: GV12 Turn Machining
+      queue: 
+      finished: 'yes'
+    data_received: 
+  time:timestamp: '2019-11-15T14:17:56.633+01:00'

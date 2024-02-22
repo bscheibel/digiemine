@@ -1,0 +1,259 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: 2398
+    cpee:name: MT45 Check Operational Safety
+    cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+---
+event:
+  concept:instance: 2398
+  id:id: external
+  cpee:activity: external
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - initial
+    data_values:
+      initial: 'true'
+  time:timestamp: '2020-11-10T17:07:48.848+01:00'
+---
+event:
+  concept:instance: 2398
+  id:id: external
+  cpee:activity: external
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - ipc_receive
+    - magazine_x
+    - magazine_z
+    data_values:
+      ipc_receive: https-get://centurio.work/ing/correlators/message/receive/
+      magazine_x: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/X/aaLeadP
+      magazine_z: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/Z/aaLeadP
+  time:timestamp: '2020-11-10T17:07:48.871+01:00'
+---
+event:
+  concept:instance: 2398
+  id:id: external
+  cpee:activity: external
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    data_values:
+      info: MT45 Check Operational Safety
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+  time:timestamp: '2020-11-10T17:07:48.893+01:00'
+---
+event:
+  concept:instance: 2398
+  id:id: external
+  cpee:activity: external
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - initial
+    data_values:
+      initial: 'false'
+  time:timestamp: '2020-11-10T17:07:49.127+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Wait For Unload End
+  id:id: a15
+  cpee:activity: a15
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: id
+      value: maxxturn45unloadready
+    - name: ttl
+      value: '0'
+  time:timestamp: '2020-11-10T17:07:50.537+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Wait For Unload End
+  id:id: a15
+  cpee:activity: a15
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: slotid
+      data: 99ca8040-2fff-4eb3-9255-fcffd055aa1e
+  time:timestamp: '2020-11-10T17:07:50.600+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Wait For Unload End
+  id:id: a15
+  cpee:activity: a15
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: message
+      mimetype: application/json
+      data:
+        message: ok
+        delivery: source
+  time:timestamp: '2020-11-10T17:11:13.295+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Wait For Unload End
+  id:id: a15
+  cpee:activity: a15
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T17:11:13.384+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Get Magazine X
+  id:id: a3
+  cpee:activity: a3
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  time:timestamp: '2020-11-10T17:11:13.416+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Get Magazine X
+  id:id: a3
+  cpee:activity: a3
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: text
+      mimetype: text/plain
+      data: 215.7
+  time:timestamp: '2020-11-10T17:11:13.457+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Get Magazine X
+  id:id: a3
+  cpee:activity: a3
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - magazine_x
+    data_values:
+      initial: false
+      magazine_x: 215.7
+  time:timestamp: '2020-11-10T17:11:13.490+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Get Magazine X
+  id:id: a3
+  cpee:activity: a3
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T17:11:13.508+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Get Magazine Z
+  id:id: a5
+  cpee:activity: a5
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  time:timestamp: '2020-11-10T17:11:13.541+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Get Magazine Z
+  id:id: a5
+  cpee:activity: a5
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: text
+      mimetype: text/plain
+      data: 601.5
+  time:timestamp: '2020-11-10T17:11:13.565+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Get Magazine Z
+  id:id: a5
+  cpee:activity: a5
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - magazine_z
+    data_values:
+      initial: false
+      magazine_x: 215.7
+      magazine_z: 601.5
+  time:timestamp: '2020-11-10T17:11:13.590+01:00'
+---
+event:
+  concept:instance: 2398
+  concept:name: Get Magazine Z
+  id:id: a5
+  cpee:activity: a5
+  cpee:instance: df77d6ee-3336-463a-97e7-82265a581bef
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T17:11:13.618+01:00'

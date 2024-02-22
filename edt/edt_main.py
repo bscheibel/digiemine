@@ -17,10 +17,8 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 import numpy as np
 import sys
-import tree_code as tc
-import time
+from edt import tree_code as tc
 import re
-import swifter
 
 def create_features(df, result_column, names):
     new_names = []
@@ -30,7 +28,6 @@ def create_features(df, result_column, names):
     df_new1 = df[names_notbounds]
     comparison_operators = ['<', '>', '<=', '>=']
     count = 0
-    #print(names)
     for name1 in df_new:
         if name1 not in names:
             continue
@@ -39,14 +36,8 @@ def create_features(df, result_column, names):
                 continue
             for op in comparison_operators:
                 expression = "row." + name1 + op + "row." + name2
-
                 new_name = str(expression)
-
-                #print(expression)
-                #start = time.time()
                 df[expression] = df.swifter.apply(lambda row: (eval(expression)), axis=1)
-                #end = time.time()
-                #print("time expression apply", end-start)
                 new_names.append(new_name)
                 count += 1
     return df, new_names
@@ -59,7 +50,6 @@ def create_features_onlybounds(df, result_column, names):
     df_new1 = df[names_notbounds]
     comparison_operators = ['<', '>', '<=', '>=']
     count = 0
-    #print(names)
     for name1 in df_new:
         if name1 not in names:
             continue
@@ -70,12 +60,7 @@ def create_features_onlybounds(df, result_column, names):
                 expression = "row." + name1 + op + "row." + name2
 
                 new_name = str(expression)
-
-                #print(expression)
-                #start = time.time()
                 df[expression] = df.swifter.apply(lambda row: (eval(expression)), axis=1)
-                #end = time.time()
-                #print("time expression apply", end-start)
                 new_names.append(new_name)
                 count += 1
     return df, new_names
@@ -96,7 +81,6 @@ def create_features_withoutbounds(df, result_column, names):
                     continue
                 expression = "row." + name1 + op + "row." + name2
                 new_name = str(expression)
-                #print(expression)
                 df[expression] = df.apply(lambda row: (eval(expression)), axis=1)
                 new_names.append(new_name)
     return df, new_names
@@ -115,15 +99,9 @@ def define(input, result_column, combined=False):
 
     for column in df:
         first_value = (df[column].iloc[0])
-        #first_value = (df[column][0])
         if isinstance(first_value, (int, float, np.int64, bool)):
             num_attributes.append(column)
-        #else: ##only needed if all numerical variables are coded as string
-        #     try:
-        #         df[column] = df[column].apply(lambda x: ast.literal_eval(str(x)))
-        #         num_attributes.append(column)
-        #     except:
-        #         pass
+
 
     num_attributes = [i for i in num_attributes if i not in result_column and i != "uuid"]
     rules = run(df,result_column, num_attributes, combined)
@@ -135,11 +113,7 @@ def run(df, result_column, names, combined):
         df, new_names = create_features(df, result_column, names)
     else:
         df, new_names = create_features_onlybounds(df, result_column, names)
-
-    #df.to_csv('files/temp.csv', index=False)  # , header = None)
-    print(new_names)
     important_feat = new_names
-    #print(df)
     _, rules = tc.learn_tree(df, result_column, important_feat)
     return rules
 

@@ -1,0 +1,161 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: 1695
+    cpee:name: Get MT45 State
+    cpee:instance: 8c809bcc-f297-4d5f-a30d-5698dabfe2a1
+---
+event:
+  concept:instance: 1695
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 8c809bcc-f297-4d5f-a30d-5698dabfe2a1
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check_var
+    data_values:
+      check_var: ''
+  time:timestamp: '2020-11-10T14:29:06.300+01:00'
+---
+event:
+  concept:instance: 1695
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 8c809bcc-f297-4d5f-a30d-5698dabfe2a1
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - ep_check
+    data_values:
+      ep_check: http://localhost:8012/server/find
+  time:timestamp: '2020-11-10T14:29:06.322+01:00'
+---
+event:
+  concept:instance: 1695
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 8c809bcc-f297-4d5f-a30d-5698dabfe2a1
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    data_values:
+      info: Get MT45 State
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+  time:timestamp: '2020-11-10T14:29:06.332+01:00'
+---
+event:
+  concept:instance: 1695
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 8c809bcc-f297-4d5f-a30d-5698dabfe2a1
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check_var
+    data_values:
+      check_var: MaxxTurn45.Machine.NC
+  time:timestamp: '2020-11-10T14:29:06.537+01:00'
+---
+event:
+  concept:instance: 1695
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 8c809bcc-f297-4d5f-a30d-5698dabfe2a1
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.NC
+  time:timestamp: '2020-11-10T14:29:07.882+01:00'
+---
+event:
+  concept:instance: 1695
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 8c809bcc-f297-4d5f-a30d-5698dabfe2a1
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.NC:
+          timestamp: '2020-11-10T14:25:57.9318199+01:00'
+          ID: MaxxTurn45.Machine.NC
+          description: ''
+          name: NC
+          path: MaxxTurn45/Machine/NC
+          source: CmiServer
+          value: Cancelled
+          meta:
+            type: System.String
+            enumeration: 
+  time:timestamp: '2020-11-10T14:29:07.942+01:00'
+---
+event:
+  concept:instance: 1695
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 8c809bcc-f297-4d5f-a30d-5698dabfe2a1
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      check_var: MaxxTurn45.Machine.NC
+      check: Cancelled
+  time:timestamp: '2020-11-10T14:29:07.971+01:00'
+---
+event:
+  concept:instance: 1695
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 8c809bcc-f297-4d5f-a30d-5698dabfe2a1
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T14:29:07.995+01:00'

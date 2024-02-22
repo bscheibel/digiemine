@@ -1,0 +1,488 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: 2085
+    cpee:name: X Generate NC
+    cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+---
+event:
+  concept:instance: 2085
+  id:id: external
+  cpee:activity: external
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - params
+    - patterns
+    - program_url
+    data_values:
+      params: "[0.03,0.2]"
+      patterns: '[ "yyyy", "xxxx" ]'
+      program_url: https://centurio.work/artefacts/etm/MT45/raw/master/TURM_PSC.MPF
+  time:timestamp: '2020-11-10T15:35:48.380+01:00'
+---
+event:
+  concept:instance: 2085
+  id:id: external
+  cpee:activity: external
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - timeout
+    - start_git
+    - fetch
+    data_values:
+      timeout: http://gruppe.wst.univie.ac.at/~mangler/services/timeout.php
+      start_git: https://centurio.work/flow-test/start/git/
+      fetch: https://centurio.work/artefacts/etm/MT45/raw/master/TURM_PSC.MPF
+  time:timestamp: '2020-11-10T15:35:48.401+01:00'
+---
+event:
+  concept:instance: 2085
+  id:id: external
+  cpee:activity: external
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    data_values:
+      info: X Generate NC
+      modeltype: CPEE
+      theme: preset
+      customer: pilotfabrik
+      status: development
+  time:timestamp: '2020-11-10T15:35:48.413+01:00'
+---
+event:
+  concept:instance: 2085
+  id:id: external
+  cpee:activity: external
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - params
+    - patterns
+    - program_url
+    data_values:
+      params: '[0.05, 0.4, "wr04"]'
+      patterns: '[ "yyyy", "xxxx", "aaaa" ]'
+      program_url: https://centurio.work/artefacts/etm/MT45/raw/master/TURM_PSC.MPF
+  time:timestamp: '2020-11-10T15:35:48.464+01:00'
+---
+event:
+  concept:instance: 2085
+  concept:name: Set Endpoint
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - fetch
+    data_values:
+      timeout: http://gruppe.wst.univie.ac.at/~mangler/services/timeout.php
+      start_git: https://centurio.work/flow-test/start/git/
+      fetch: https://centurio.work/artefacts/etm/MT45/raw/master/TURM_PSC.MPF
+  time:timestamp: '2020-11-10T15:35:50.463+01:00'
+---
+event:
+  concept:instance: 2085
+  concept:name: Set Endpoint
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T15:35:50.475+01:00'
+---
+event:
+  concept:instance: 2085
+  concept:name: Fetch Program
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  time:timestamp: '2020-11-10T15:35:50.516+01:00'
+---
+event:
+  concept:instance: 2085
+  concept:name: Fetch Program
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: text/plain
+      data: |-
+        F_HEAD(1120403455,25,0.2,,120,1,1,8.5,-8.2,390,200,0.4,4000,6000,71,0,43663,,60,,20,6,6,100,100,100,1,205.5,,8650751,16015,2,0,6,120,0,,-100,-80,6,100,100,100,10,10,0,0,,200,50,720);*RO*
+        $MAS_SPINDLE_PARAMETER[1,AX6]=31.5
+        MSG("Type: aaaa; Schnitttiefe: xxxx; Vorschub: yyyy")
+        F_ROUGH("SCHRUPPER-A-L","",1,0.1,3,250,2,0,54273,5,25,90,0.5,90,-0.8,90,0,90,-0.8,90,0,90,0,0,0,0,0.8,0,0.1,0,90,90,0,0,0);*RO*
+        F_TS("FRAESER-10-AXHS",,1,1000,1,2,5,,,0,0,0,0);*RO*
+        F_DRILL("FRAESER-10-AXHS","",1,200,1,3500,1,0,40,0.5,90,-2.2,90,50,85,3,5,0,17,0,100);*RO*
+        F_CON("HS_BOHR",4,"E_LAB_A_HS_BOHR","E_LAB_E_HS_BOHR");*RO*
+        F_ROU_Z("BOHRSTANGE-10/12L","",1,0.12,3,200,2,0,0,,,,"202006301043360",,,,"202006301043361",321321,0.05,10,0.2,1.5,2,0.2,0.05,0.1,0,0,0,1,10,90,0.1,90,110,,,10,,,,2,2,,,,,0,,,,0,0,0,1,1,0,0.08);*RO*
+        F_CON("HS",4,"E_LAB_A_HS","E_LAB_E_HS");*RO*
+        F_ROU_Z("SCHRUPPER-A-L","",1,0.15,3,250,2,0,0,,,,"202006301047382",,,,"202006301047383",321111,0.1,10,0.2,2,2,xxxx,0.2,0.1,0,0,0,1,25,90,0.1,90,110,,,10,,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("SCHLICHTER-A-L","",1,0.15,3,250,2,10,0,,,,"202006301051164","202006301047383",,,"202006301051165",311111,0.05,0.2,0.07,1,6,xxxx,0.1,0.1,0,0.2,0,1,0,91,0,91,31,,1,,-41.5,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("EINSTI_2N-LR-HS","",1,0.1,3,200,2,12,0,,,,"2020063011000810","202006301051165",,,"2020063011000811",301111,0.08,0.1,0.1,0.8,6,0.2,1,0.1,0,0,0,1,0,91,0,91,30,,-8,,-5,,,2,2,1,30,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("EINSTI_2N-LR-HS","",1,0.1,3,200,2,12,0,,,,"2020063011011512","2020063011000811",,,"2020063011011513",301211,0.08,0.1,0.1,1,6,0.2,0.5,0.1,0,0,0,1,0,91,0,91,31,,-41.1,,-46.9,,,2,2,1,30,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("SCHLICHTER-A-L","",1,yyyy,3,250,2,0,0,,,,"2020063011091716",,,,"2020063011091717",311211,0.1,10,0.2,1.5,2,0.2,0.2,0.1,0,0,0,1,25,90,0.1,90,31,,1,,-42,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("SCHLICHTER-A-L","",1,yyyy,3,250,2,0,0,,,,"2020063011113318",,,,"2020063011113319",311211,0.1,10,0.2,1.5,2,0.2,0.2,0.1,0,0,0,1,25,90,0.1,90,23,21,-46,,-53,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_TS("EINSTICH-ABSTICH3",,1,,0,1,5,,,0,0,0,0);*RO*
+        F_SUB_SP(11004,3,50,0,-29,1,90,1500,2000,2,-50,0,720,100,-50,,2,,0);*RO*
+        F_PARTOF("EINSTICH-ABSTICH3","",1,0.08,3,200,2,0,22,-50.1,1,90,0,90,0,1500,0.04,0.2,0,4000,0,0,0,1);*RO*
+        F_ROUGH("SCHLICHTER-A-R","",1,0.08,3,250,2,0,46082,5,22,90,0.2,90,-1,90,0,90,-1,90,0,90,0,0,0,0.4,0.2,0.1,0,1,90,90,0,0,0);*RO*
+        F_TS("SCHRUPPER-A-R",,1,,0,1,5,,,0,0,0,0);*RO*
+        M9
+        MSG("G0 D0 G53 X431.4;X431.4")
+        G0 D0 G53 X431.4;X431.4
+        MSG("G53 D0 Z601.5 C2=0;Z601.5")
+        G53 D0 Z601.5 C2=0;Z601.5
+        ;M2=25 M9 ;M2=71
+        G04 F1
+        ENDE:M30
+        F_END(0,1,0);*RO*
+        M30 ;#SM;*RO*
+        E_LAB_A_HS_BOHR: ;#SM Z:2
+        ;#7__DlgK contour definition begin - Don't change!;*GP*;*RO*;*HD*
+        G18 G90 DIAM90;*GP*
+        G0 Z0 X17.8 ;*GP*
+        G1 X17 RND=.4 ;*GP*
+        Z-2 ;*GP*
+        X9 ;*GP*
+        ;CON,V64,2,0.0000,2,2,MST:3,2,AX:Z,X,K,I,TRANS:0;*GP*;*RO*;*HD*
+        ;S,EX:0,EY:17,ASE:270;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-2;*GP*;*RO*;*HD*
+        ;LD,EY:9;*GP*;*RO*;*HD*
+        ;#End contour definition end - Don't change!;*GP*;*RO*;*HD*
+        E_LAB_E_HS_BOHR:
+        E_LAB_A_HS: ;#SM Z:6
+        ;#7__DlgK contour definition begin - Don't change!;*GP*;*RO*;*HD*
+        G18 G90 DIAM90;*GP*
+        G0 Z0 X16 ;*GP*
+        G1 X22 RND=.4 ;*GP*
+        Z-5.2 RND=.4 ;*GP*
+        G2 Z-24.8 K=AC(-15) I=AC(67.998) RND=.4 ;*GP*
+        G1 Z-30.67 RND=.4 ;*GP*
+        Z-35 X17 RND=.8 ;*GP*
+        Z-39.33 X22 RND=.4 ;*GP*
+        Z-41.5 RND=.04 ;*GP*
+        X16 RND=.4 ;*GP*
+        Z-46.5 RND=.4 ;*GP*
+        X22 RND=.4 ;*GP*
+        Z-53.8 ;*GP*
+        X25 ;*GP*
+        ;CON,V64,2,0.0000,11,11,MST:3,2,AX:Z,X,K,I,TRANS:0;*GP*;*RO*;*HD*
+        ;S,EX:0,EY:16,ASE:90;*GP*;*RO*;*HD*
+        ;R,RROUND:0;*GP*;*RO*;*HD*
+        ;LU,EY:22;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-5.2;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;ACW,DIA:0/235,EX:-24.8,EY:22,RAD:25;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-30.67;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LA,EX:-35,EY:17;*GP*;*RO*;*HD*
+        ;R,RROUND:.8;*GP*;*RO*;*HD*
+        ;LA,EX:-39.33,EY:22;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-41.5;*GP*;*RO*;*HD*
+        ;R,RROUND:.04;*GP*;*RO*;*HD*
+        ;LD,EY:16;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-46.5;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LU,EY:22;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-53.8;*GP*;*RO*;*HD*
+        ;LU,EY:25;*GP*;*RO*;*HD*
+        ;#End contour definition end - Don't change!;*GP*;*RO*;*HD*
+        E_LAB_E_HS:
+  time:timestamp: '2020-11-10T15:35:50.574+01:00'
+---
+event:
+  concept:instance: 2085
+  concept:name: Fetch Program
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - program
+    data_values:
+      params:
+      - 0.05
+      - 0.4
+      - wr04
+      patterns:
+      - yyyy
+      - xxxx
+      - aaaa
+      program_url: https://centurio.work/artefacts/etm/MT45/raw/master/TURM_PSC.MPF
+      program: |-
+        F_HEAD(1120403455,25,0.2,,120,1,1,8.5,-8.2,390,200,0.4,4000,6000,71,0,43663,,60,,20,6,6,100,100,100,1,205.5,,8650751,16015,2,0,6,120,0,,-100,-80,6,100,100,100,10,10,0,0,,200,50,720);*RO*
+        $MAS_SPINDLE_PARAMETER[1,AX6]=31.5
+        MSG("Type: aaaa; Schnitttiefe: xxxx; Vorschub: yyyy")
+        F_ROUGH("SCHRUPPER-A-L","",1,0.1,3,250,2,0,54273,5,25,90,0.5,90,-0.8,90,0,90,-0.8,90,0,90,0,0,0,0,0.8,0,0.1,0,90,90,0,0,0);*RO*
+        F_TS("FRAESER-10-AXHS",,1,1000,1,2,5,,,0,0,0,0);*RO*
+        F_DRILL("FRAESER-10-AXHS","",1,200,1,3500,1,0,40,0.5,90,-2.2,90,50,85,3,5,0,17,0,100);*RO*
+        F_CON("HS_BOHR",4,"E_LAB_A_HS_BOHR","E_LAB_E_HS_BOHR");*RO*
+        F_ROU_Z("BOHRSTANGE-10/12L","",1,0.12,3,200,2,0,0,,,,"202006301043360",,,,"202006301043361",321321,0.05,10,0.2,1.5,2,0.2,0.05,0.1,0,0,0,1,10,90,0.1,90,110,,,10,,,,2,2,,,,,0,,,,0,0,0,1,1,0,0.08);*RO*
+        F_CON("HS",4,"E_LAB_A_HS","E_LAB_E_HS");*RO*
+        F_ROU_Z("SCHRUPPER-A-L","",1,0.15,3,250,2,0,0,,,,"202006301047382",,,,"202006301047383",321111,0.1,10,0.2,2,2,xxxx,0.2,0.1,0,0,0,1,25,90,0.1,90,110,,,10,,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("SCHLICHTER-A-L","",1,0.15,3,250,2,10,0,,,,"202006301051164","202006301047383",,,"202006301051165",311111,0.05,0.2,0.07,1,6,xxxx,0.1,0.1,0,0.2,0,1,0,91,0,91,31,,1,,-41.5,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("EINSTI_2N-LR-HS","",1,0.1,3,200,2,12,0,,,,"2020063011000810","202006301051165",,,"2020063011000811",301111,0.08,0.1,0.1,0.8,6,0.2,1,0.1,0,0,0,1,0,91,0,91,30,,-8,,-5,,,2,2,1,30,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("EINSTI_2N-LR-HS","",1,0.1,3,200,2,12,0,,,,"2020063011011512","2020063011000811",,,"2020063011011513",301211,0.08,0.1,0.1,1,6,0.2,0.5,0.1,0,0,0,1,0,91,0,91,31,,-41.1,,-46.9,,,2,2,1,30,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("SCHLICHTER-A-L","",1,yyyy,3,250,2,0,0,,,,"2020063011091716",,,,"2020063011091717",311211,0.1,10,0.2,1.5,2,0.2,0.2,0.1,0,0,0,1,25,90,0.1,90,31,,1,,-42,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("SCHLICHTER-A-L","",1,yyyy,3,250,2,0,0,,,,"2020063011113318",,,,"2020063011113319",311211,0.1,10,0.2,1.5,2,0.2,0.2,0.1,0,0,0,1,25,90,0.1,90,23,21,-46,,-53,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_TS("EINSTICH-ABSTICH3",,1,,0,1,5,,,0,0,0,0);*RO*
+        F_SUB_SP(11004,3,50,0,-29,1,90,1500,2000,2,-50,0,720,100,-50,,2,,0);*RO*
+        F_PARTOF("EINSTICH-ABSTICH3","",1,0.08,3,200,2,0,22,-50.1,1,90,0,90,0,1500,0.04,0.2,0,4000,0,0,0,1);*RO*
+        F_ROUGH("SCHLICHTER-A-R","",1,0.08,3,250,2,0,46082,5,22,90,0.2,90,-1,90,0,90,-1,90,0,90,0,0,0,0.4,0.2,0.1,0,1,90,90,0,0,0);*RO*
+        F_TS("SCHRUPPER-A-R",,1,,0,1,5,,,0,0,0,0);*RO*
+        M9
+        MSG("G0 D0 G53 X431.4;X431.4")
+        G0 D0 G53 X431.4;X431.4
+        MSG("G53 D0 Z601.5 C2=0;Z601.5")
+        G53 D0 Z601.5 C2=0;Z601.5
+        ;M2=25 M9 ;M2=71
+        G04 F1
+        ENDE:M30
+        F_END(0,1,0);*RO*
+        M30 ;#SM;*RO*
+        E_LAB_A_HS_BOHR: ;#SM Z:2
+        ;#7__DlgK contour definition begin - Don't change!;*GP*;*RO*;*HD*
+        G18 G90 DIAM90;*GP*
+        G0 Z0 X17.8 ;*GP*
+        G1 X17 RND=.4 ;*GP*
+        Z-2 ;*GP*
+        X9 ;*GP*
+        ;CON,V64,2,0.0000,2,2,MST:3,2,AX:Z,X,K,I,TRANS:0;*GP*;*RO*;*HD*
+        ;S,EX:0,EY:17,ASE:270;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-2;*GP*;*RO*;*HD*
+        ;LD,EY:9;*GP*;*RO*;*HD*
+        ;#End contour definition end - Don't change!;*GP*;*RO*;*HD*
+        E_LAB_E_HS_BOHR:
+        E_LAB_A_HS: ;#SM Z:6
+        ;#7__DlgK contour definition begin - Don't change!;*GP*;*RO*;*HD*
+        G18 G90 DIAM90;*GP*
+        G0 Z0 X16 ;*GP*
+        G1 X22 RND=.4 ;*GP*
+        Z-5.2 RND=.4 ;*GP*
+        G2 Z-24.8 K=AC(-15) I=AC(67.998) RND=.4 ;*GP*
+        G1 Z-30.67 RND=.4 ;*GP*
+        Z-35 X17 RND=.8 ;*GP*
+        Z-39.33 X22 RND=.4 ;*GP*
+        Z-41.5 RND=.04 ;*GP*
+        X16 RND=.4 ;*GP*
+        Z-46.5 RND=.4 ;*GP*
+        X22 RND=.4 ;*GP*
+        Z-53.8 ;*GP*
+        X25 ;*GP*
+        ;CON,V64,2,0.0000,11,11,MST:3,2,AX:Z,X,K,I,TRANS:0;*GP*;*RO*;*HD*
+        ;S,EX:0,EY:16,ASE:90;*GP*;*RO*;*HD*
+        ;R,RROUND:0;*GP*;*RO*;*HD*
+        ;LU,EY:22;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-5.2;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;ACW,DIA:0/235,EX:-24.8,EY:22,RAD:25;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-30.67;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LA,EX:-35,EY:17;*GP*;*RO*;*HD*
+        ;R,RROUND:.8;*GP*;*RO*;*HD*
+        ;LA,EX:-39.33,EY:22;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-41.5;*GP*;*RO*;*HD*
+        ;R,RROUND:.04;*GP*;*RO*;*HD*
+        ;LD,EY:16;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-46.5;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LU,EY:22;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-53.8;*GP*;*RO*;*HD*
+        ;LU,EY:25;*GP*;*RO*;*HD*
+        ;#End contour definition end - Don't change!;*GP*;*RO*;*HD*
+        E_LAB_E_HS:
+  time:timestamp: '2020-11-10T15:35:50.604+01:00'
+---
+event:
+  concept:instance: 2085
+  concept:name: Fetch Program
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T15:35:50.622+01:00'
+---
+event:
+  concept:instance: 2085
+  concept:name: Replace Patterns with Params
+  id:id: a3
+  cpee:activity: a3
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - program
+    data_values:
+      params:
+      - 0.05
+      - 0.4
+      - wr04
+      patterns:
+      - yyyy
+      - xxxx
+      - aaaa
+      program_url: https://centurio.work/artefacts/etm/MT45/raw/master/TURM_PSC.MPF
+      program: |-
+        F_HEAD(1120403455,25,0.2,,120,1,1,8.5,-8.2,390,200,0.4,4000,6000,71,0,43663,,60,,20,6,6,100,100,100,1,205.5,,8650751,16015,2,0,6,120,0,,-100,-80,6,100,100,100,10,10,0,0,,200,50,720);*RO*
+        $MAS_SPINDLE_PARAMETER[1,AX6]=31.5
+        MSG("Type: wr04; Schnitttiefe: 0.4; Vorschub: 0.05")
+        F_ROUGH("SCHRUPPER-A-L","",1,0.1,3,250,2,0,54273,5,25,90,0.5,90,-0.8,90,0,90,-0.8,90,0,90,0,0,0,0,0.8,0,0.1,0,90,90,0,0,0);*RO*
+        F_TS("FRAESER-10-AXHS",,1,1000,1,2,5,,,0,0,0,0);*RO*
+        F_DRILL("FRAESER-10-AXHS","",1,200,1,3500,1,0,40,0.5,90,-2.2,90,50,85,3,5,0,17,0,100);*RO*
+        F_CON("HS_BOHR",4,"E_LAB_A_HS_BOHR","E_LAB_E_HS_BOHR");*RO*
+        F_ROU_Z("BOHRSTANGE-10/12L","",1,0.12,3,200,2,0,0,,,,"202006301043360",,,,"202006301043361",321321,0.05,10,0.2,1.5,2,0.2,0.05,0.1,0,0,0,1,10,90,0.1,90,110,,,10,,,,2,2,,,,,0,,,,0,0,0,1,1,0,0.08);*RO*
+        F_CON("HS",4,"E_LAB_A_HS","E_LAB_E_HS");*RO*
+        F_ROU_Z("SCHRUPPER-A-L","",1,0.15,3,250,2,0,0,,,,"202006301047382",,,,"202006301047383",321111,0.1,10,0.2,2,2,0.4,0.2,0.1,0,0,0,1,25,90,0.1,90,110,,,10,,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("SCHLICHTER-A-L","",1,0.15,3,250,2,10,0,,,,"202006301051164","202006301047383",,,"202006301051165",311111,0.05,0.2,0.07,1,6,0.4,0.1,0.1,0,0.2,0,1,0,91,0,91,31,,1,,-41.5,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("EINSTI_2N-LR-HS","",1,0.1,3,200,2,12,0,,,,"2020063011000810","202006301051165",,,"2020063011000811",301111,0.08,0.1,0.1,0.8,6,0.2,1,0.1,0,0,0,1,0,91,0,91,30,,-8,,-5,,,2,2,1,30,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("EINSTI_2N-LR-HS","",1,0.1,3,200,2,12,0,,,,"2020063011011512","2020063011000811",,,"2020063011011513",301211,0.08,0.1,0.1,1,6,0.2,0.5,0.1,0,0,0,1,0,91,0,91,31,,-41.1,,-46.9,,,2,2,1,30,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("SCHLICHTER-A-L","",1,0.05,3,250,2,0,0,,,,"2020063011091716",,,,"2020063011091717",311211,0.1,10,0.2,1.5,2,0.2,0.2,0.1,0,0,0,1,25,90,0.1,90,31,,1,,-42,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_ROU_Z("SCHLICHTER-A-L","",1,0.05,3,250,2,0,0,,,,"2020063011113318",,,,"2020063011113319",311211,0.1,10,0.2,1.5,2,0.2,0.2,0.1,0,0,0,1,25,90,0.1,90,23,21,-46,,-53,,,2,2,,,,,0,,,,0,0,0,1,1,0);*RO*
+        F_TS("EINSTICH-ABSTICH3",,1,,0,1,5,,,0,0,0,0);*RO*
+        F_SUB_SP(11004,3,50,0,-29,1,90,1500,2000,2,-50,0,720,100,-50,,2,,0);*RO*
+        F_PARTOF("EINSTICH-ABSTICH3","",1,0.08,3,200,2,0,22,-50.1,1,90,0,90,0,1500,0.04,0.2,0,4000,0,0,0,1);*RO*
+        F_ROUGH("SCHLICHTER-A-R","",1,0.08,3,250,2,0,46082,5,22,90,0.2,90,-1,90,0,90,-1,90,0,90,0,0,0,0.4,0.2,0.1,0,1,90,90,0,0,0);*RO*
+        F_TS("SCHRUPPER-A-R",,1,,0,1,5,,,0,0,0,0);*RO*
+        M9
+        MSG("G0 D0 G53 X431.4;X431.4")
+        G0 D0 G53 X431.4;X431.4
+        MSG("G53 D0 Z601.5 C2=0;Z601.5")
+        G53 D0 Z601.5 C2=0;Z601.5
+        ;M2=25 M9 ;M2=71
+        G04 F1
+        ENDE:M30
+        F_END(0,1,0);*RO*
+        M30 ;#SM;*RO*
+        E_LAB_A_HS_BOHR: ;#SM Z:2
+        ;#7__DlgK contour definition begin - Don't change!;*GP*;*RO*;*HD*
+        G18 G90 DIAM90;*GP*
+        G0 Z0 X17.8 ;*GP*
+        G1 X17 RND=.4 ;*GP*
+        Z-2 ;*GP*
+        X9 ;*GP*
+        ;CON,V64,2,0.0000,2,2,MST:3,2,AX:Z,X,K,I,TRANS:0;*GP*;*RO*;*HD*
+        ;S,EX:0,EY:17,ASE:270;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-2;*GP*;*RO*;*HD*
+        ;LD,EY:9;*GP*;*RO*;*HD*
+        ;#End contour definition end - Don't change!;*GP*;*RO*;*HD*
+        E_LAB_E_HS_BOHR:
+        E_LAB_A_HS: ;#SM Z:6
+        ;#7__DlgK contour definition begin - Don't change!;*GP*;*RO*;*HD*
+        G18 G90 DIAM90;*GP*
+        G0 Z0 X16 ;*GP*
+        G1 X22 RND=.4 ;*GP*
+        Z-5.2 RND=.4 ;*GP*
+        G2 Z-24.8 K=AC(-15) I=AC(67.998) RND=.4 ;*GP*
+        G1 Z-30.67 RND=.4 ;*GP*
+        Z-35 X17 RND=.8 ;*GP*
+        Z-39.33 X22 RND=.4 ;*GP*
+        Z-41.5 RND=.04 ;*GP*
+        X16 RND=.4 ;*GP*
+        Z-46.5 RND=.4 ;*GP*
+        X22 RND=.4 ;*GP*
+        Z-53.8 ;*GP*
+        X25 ;*GP*
+        ;CON,V64,2,0.0000,11,11,MST:3,2,AX:Z,X,K,I,TRANS:0;*GP*;*RO*;*HD*
+        ;S,EX:0,EY:16,ASE:90;*GP*;*RO*;*HD*
+        ;R,RROUND:0;*GP*;*RO*;*HD*
+        ;LU,EY:22;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-5.2;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;ACW,DIA:0/235,EX:-24.8,EY:22,RAD:25;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-30.67;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LA,EX:-35,EY:17;*GP*;*RO*;*HD*
+        ;R,RROUND:.8;*GP*;*RO*;*HD*
+        ;LA,EX:-39.33,EY:22;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-41.5;*GP*;*RO*;*HD*
+        ;R,RROUND:.04;*GP*;*RO*;*HD*
+        ;LD,EY:16;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-46.5;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LU,EY:22;*GP*;*RO*;*HD*
+        ;R,RROUND:.4;*GP*;*RO*;*HD*
+        ;LL,EX:-53.8;*GP*;*RO*;*HD*
+        ;LU,EY:25;*GP*;*RO*;*HD*
+        ;#End contour definition end - Don't change!;*GP*;*RO*;*HD*
+        E_LAB_E_HS:
+  time:timestamp: '2020-11-10T15:35:50.655+01:00'
+---
+event:
+  concept:instance: 2085
+  concept:name: Replace Patterns with Params
+  id:id: a3
+  cpee:activity: a3
+  cpee:instance: b1f4cda2-4320-4dd9-af80-cc6facc9f448
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T15:35:50.672+01:00'

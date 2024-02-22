@@ -1,0 +1,361 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: 1935
+    cpee:name: Turm Turn Production
+    cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+---
+event:
+  concept:instance: 1935
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - machine
+    - program
+    - program_path
+    - trigger
+    - trigger_start
+    - trigger_pause
+    - trigger_end
+    - event_batch
+    - label
+    data_values:
+      machine: keyence
+      program: gfrast1
+      program_path: program
+      trigger: state
+      trigger_start: active
+      trigger_pause: notpossible
+      trigger_end: inactive
+      event_batch: '333'
+      label: ''
+  time:timestamp: '2020-11-10T15:11:54.902+01:00'
+---
+event:
+  concept:instance: 1935
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - timeout
+    - start_instance
+    - start_url
+    - at
+    - measure
+    - decide
+    data_values:
+      timeout: http://gruppe.wst.univie.ac.at/~mangler/services/timeout.php
+      start_instance: https://centurio.work/flow/start/instance/
+      start_url: https://centurio.work/flow-test/start/url/
+      at: https-get://centurio.work/data/dpnorth/at/
+      measure: https://centurio.work/out/measure/tasks/
+      decide: https://centurio.work/out/finished/tasks/
+  time:timestamp: '2020-11-10T15:11:54.924+01:00'
+---
+event:
+  concept:instance: 1935
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    data_values:
+      info: Turm Turn Production
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+  time:timestamp: '2020-11-10T15:11:54.936+01:00'
+---
+event:
+  concept:instance: 1935
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - machine
+    - program
+    - program_path
+    - trigger
+    - trigger_start
+    - trigger_pause
+    - trigger_end
+    - event_batch
+    - label
+    - stream_handling
+    - qr
+    data_values:
+      machine: MaxxTurn45
+      program: _N_TURM_PSC1_MPF
+      program_path: Program/progName1
+      trigger: State/progStatus
+      trigger_start: '3'
+      trigger_pause: '2'
+      trigger_end: '5'
+      event_batch: '333'
+      label: Turm Turn Machining
+      stream_handling: https://centurio.work/customers/prime/stream_handling/matthias_machining.xml
+      qr: "*268MFA466*TZHZE 009"
+  time:timestamp: '2020-11-10T15:11:55.289+01:00'
+---
+event:
+  concept:instance: 1935
+  concept:name: Detection Machining
+  id:id: a4
+  cpee:activity: a4
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: machine
+      value: MaxxTurn45
+    - name: program_path
+      value: Program/progName1
+    - name: program_value
+      value: _N_TURM_PSC1_MPF
+    - name: trigger_path
+      value: State/progStatus
+    - name: trigger_start_value
+      value: 3
+    - name: trigger_pause_value
+      value: 2
+    - name: trigger_end_value
+      value: 5
+    - name: target
+      value: MaxxTurn45
+    - name: event_batch
+      value: 333
+    - name: refinement
+      value: 'no'
+  time:timestamp: '2020-11-10T15:11:57.933+01:00'
+---
+event:
+  concept:instance: 1935
+  concept:name: Detection Machining
+  id:id: a4
+  cpee:activity: a4
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: text
+      mimetype: text/plain
+      data: MaxxTurn45/1605017540.7399328
+  time:timestamp: '2020-11-10T15:12:21.345+01:00'
+---
+event:
+  concept:instance: 1935
+  concept:name: Detection Machining
+  id:id: a4
+  cpee:activity: a4
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - queue
+    data_values:
+      machine: MaxxTurn45
+      program: _N_TURM_PSC1_MPF
+      program_path: Program/progName1
+      trigger: State/progStatus
+      trigger_start: 3
+      trigger_pause: 2
+      trigger_end: 5
+      event_batch: 333
+      label: Turm Turn Machining
+      stream_handling: https://centurio.work/customers/prime/stream_handling/matthias_machining.xml
+      qr: "*268MFA466*TZHZE 009"
+      queue: MaxxTurn45/1605017540.7399328
+  time:timestamp: '2020-11-10T15:12:21.413+01:00'
+---
+event:
+  concept:instance: 1935
+  concept:name: Detection Machining
+  id:id: a4
+  cpee:activity: a4
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T15:12:21.437+01:00'
+---
+event:
+  concept:instance: 1935
+  concept:name: Machining
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: Turm Turn Machining
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/r/turm-v2/Machining%20V2.xml
+    - name: init
+      value: '{ "queue": "MaxxTurn45/1605017540.7399328", "qr": "*268MFA466*TZHZE
+        009" }'
+    - name: stream
+      value: '{ "task": { "id": "a1", "url": "https://centurio.work/customers/prime/stream_handling/matthias_machining.xml"
+        } }'
+  time:timestamp: '2020-11-10T15:12:21.480+01:00'
+---
+event:
+  concept:instance: 1935
+  concept:name: Machining
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '1943'
+      CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/1943
+      CPEE-INSTANCE-UUID: e144fa41-824e-4235-b877-695e295be943
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2020-11-10T15:12:22.885+01:00'
+---
+event:
+  concept:instance: 1935
+  concept:name: Machining
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '1943'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/1943
+        CPEE-INSTANCE-UUID: e144fa41-824e-4235-b877-695e295be943
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2020-11-10T15:12:22.931+01:00'
+---
+event:
+  concept:instance: 1935
+  concept:name: Machining
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '1943'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/1943
+        CPEE-INSTANCE-UUID: e144fa41-824e-4235-b877-695e295be943
+        CPEE-STATE: running
+  time:timestamp: '2020-11-10T15:12:23.958+01:00'
+---
+event:
+  concept:instance: 1935
+  concept:name: Machining
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '1943'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/1943
+        CPEE-INSTANCE-UUID: e144fa41-824e-4235-b877-695e295be943
+        CPEE-STATE: finished
+        queue: MaxxTurn45/1605017540.7399328
+        qr: "*268MFA466*TZHZE 009"
+  time:timestamp: '2020-11-10T15:14:13.366+01:00'
+---
+event:
+  concept:instance: 1935
+  concept:name: Machining
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - finished
+    - queue
+    data_values:
+      machine: MaxxTurn45
+      program: _N_TURM_PSC1_MPF
+      program_path: Program/progName1
+      trigger: State/progStatus
+      trigger_start: 3
+      trigger_pause: 2
+      trigger_end: 5
+      event_batch: 333
+      label: Turm Turn Machining
+      stream_handling: https://centurio.work/customers/prime/stream_handling/matthias_machining.xml
+      qr: "*268MFA466*TZHZE 009"
+      queue: 
+      finished: 'yes'
+  time:timestamp: '2020-11-10T15:14:13.474+01:00'
+---
+event:
+  concept:instance: 1935
+  concept:name: Machining
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 4dc479f2-c0c3-4c65-ad2a-0713565546db
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T15:14:13.499+01:00'

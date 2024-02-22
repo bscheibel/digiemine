@@ -1,0 +1,339 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: '2119'
+    cpee:name: MT45 NC Start
+    cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+---
+event:
+  concept:instance: '2119'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - set_var
+    - set_value
+    - check_var
+    - check_value
+    data_values:
+      set_var: NC
+      set_value: Start
+      check_var: MaxxTurn45.Machine.Varset.NC.Active
+      check_value: true
+    data_received: 
+  time:timestamp: '2019-11-14T20:29:27.522+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - set_var
+    - set_value
+    - check_var
+    - check_value
+    data_values:
+      set_var: ''
+      set_value: ''
+      check_var: ''
+      check_value: ''
+    data_received: 
+  time:timestamp: '2019-11-14T20:29:27.526+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    data_values:
+      info: MT45 NC Start
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+    data_received: 
+  time:timestamp: '2019-11-14T20:29:27.530+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - ep_check
+    - ep_set
+    data_values:
+      ep_check: http://localhost:8012/server/find
+      ep_set: http://localhost:8012/call/CallFunction?timeout=100&retries=10
+    data_received: 
+  time:timestamp: '2019-11-14T20:29:27.539+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: Set
+  concept:endpoint: http://localhost:8012/call/CallFunction?timeout=100&retries=10
+  id:id: a2
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: var
+      value: NC
+    - name: value
+      value: Start
+    data_received: 
+  time:timestamp: '2019-11-14T20:29:27.544+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: Set
+  concept:endpoint: http://localhost:8012/call/CallFunction?timeout=100&retries=10
+  id:id: a2
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        Number1: 0
+        Time1: 0
+        Flag1: 67
+        Number2: 0
+        Time2: 0
+        Flag2: 0
+        Number3: 0
+        Time3: 0
+        Flag3: 0
+        Number4: 0
+        Time4: 0
+        Flag4: 0
+        Number5: 0
+        Time5: 0
+        Flag5: 0
+        Number6: 0
+        Time6: 0
+        Flag6: 0
+        Number7: 0
+        Time7: 0
+        Flag7: 0
+        Number8: 0
+        Time8: 0
+        Flag8: 0
+        Number9: 0
+        Time9: 0
+        Flag9: 0
+        Number10: 0
+        Time10: 0
+        Flag10: 0
+        ResInt1: 0
+        ResInt2: 0
+        ResByte: ''
+        Type: report
+        Order: 2475
+        StatusCode: Good
+  time:timestamp: '2019-11-14T20:29:27.691+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: Set
+  concept:endpoint: http://localhost:8012/call/CallFunction?timeout=100&retries=10
+  id:id: a2
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-14T20:29:27.700+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.NC.Active
+    data_received: 
+  time:timestamp: '2019-11-14T20:29:27.773+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.NC.Active:
+          timestamp: '2019-11-14T20:28:38.1120973+01:00'
+          ID: MaxxTurn45.Machine.Varset.NC.Active
+          description: ''
+          name: Active
+          path: MaxxTurn45/Machine/Varset/NC/Active
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2019-11-14T20:29:27.854+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: NC
+      set_value: Start
+      check_var: MaxxTurn45.Machine.Varset.NC.Active
+      check_value: true
+      check: false
+    data_received: 
+  time:timestamp: '2019-11-14T20:29:28.079+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-14T20:29:28.156+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.NC.Active:
+          timestamp: '2019-11-14T20:30:10.4018594+01:00'
+          ID: MaxxTurn45.Machine.Varset.NC.Active
+          description: ''
+          name: Active
+          path: MaxxTurn45/Machine/Varset/NC/Active
+          source: CmiServer
+          value: true
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2019-11-14T20:29:28.408+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: NC
+      set_value: Start
+      check_var: MaxxTurn45.Machine.Varset.NC.Active
+      check_value: true
+      check: true
+    data_received: 
+  time:timestamp: '2019-11-14T20:29:28.522+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-14T20:29:28.543+01:00'
+---
+event:
+  concept:instance: '2119'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:uuid: 22d4e013-a90e-4f97-b954-bb8d3de0d24a
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.NC.Active
+    data_received: 
+  time:timestamp: '2019-11-14T20:29:28.566+01:00'

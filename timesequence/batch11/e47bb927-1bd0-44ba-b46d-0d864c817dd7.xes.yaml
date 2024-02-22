@@ -1,0 +1,2739 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: 2272
+    cpee:name: MT45 Door Close
+    cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+---
+event:
+  concept:instance: 2272
+  id:id: external
+  cpee:activity: external
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - set_var
+    - set_value
+    - check_var
+    - check_value
+    data_values:
+      set_var: ''
+      set_value: ''
+      check_var: ''
+      check_value: ''
+  time:timestamp: '2020-11-10T16:26:37.775+01:00'
+---
+event:
+  concept:instance: 2272
+  id:id: external
+  cpee:activity: external
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - ep_check
+    - ep_set
+    data_values:
+      ep_check: http://localhost:8012/server/find
+      ep_set: http://localhost:8012/call/CallFunction?timeout=100&retries=10
+  time:timestamp: '2020-11-10T16:26:37.792+01:00'
+---
+event:
+  concept:instance: 2272
+  id:id: external
+  cpee:activity: external
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    data_values:
+      info: MT45 Door Close
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+  time:timestamp: '2020-11-10T16:26:37.800+01:00'
+---
+event:
+  concept:instance: 2272
+  id:id: external
+  cpee:activity: external
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - set_var
+    - set_value
+    - check_var
+    - check_value
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: 'true'
+  time:timestamp: '2020-11-10T16:26:37.832+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Set
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: var
+      value: Door
+    - name: value
+      value: Close
+  time:timestamp: '2020-11-10T16:26:39.226+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Set
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        Number1: 0
+        Time1: 0
+        Flag1: 67
+        Number2: 0
+        Time2: 0
+        Flag2: 0
+        Number3: 0
+        Time3: 0
+        Flag3: 0
+        Number4: 0
+        Time4: 0
+        Flag4: 0
+        Number5: 0
+        Time5: 0
+        Flag5: 0
+        Number6: 0
+        Time6: 0
+        Flag6: 0
+        Number7: 0
+        Time7: 0
+        Flag7: 0
+        Number8: 0
+        Time8: 0
+        Flag8: 0
+        Number9: 0
+        Time9: 0
+        Flag9: 0
+        Number10: 0
+        Time10: 0
+        Flag10: 0
+        ResInt1: 0
+        ResInt2: 0
+        ResByte: ''
+        Type: report
+        Order: 2910
+        StatusCode: Good
+  time:timestamp: '2020-11-10T16:26:39.300+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Set
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:39.335+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:39.470+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:39.496+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:39.535+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:39.562+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:39.597+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:39.644+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:39.943+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:39.968+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:40.003+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:40.033+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:40.066+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:40.088+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:40.133+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:40.164+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:40.196+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:40.224+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:40.257+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:40.284+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:40.319+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:40.341+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:40.374+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:40.405+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:40.454+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:40.473+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:40.508+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:40.544+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:40.580+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:40.603+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:40.646+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:40.674+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:40.714+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:40.746+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:40.778+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:40.806+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:40.846+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:40.868+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:40.901+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:40.927+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:41.058+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:41.077+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:41.111+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:41.141+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:41.173+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:41.199+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:41.231+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:41.256+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:41.522+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:41.545+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:41.577+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:41.610+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:41.644+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:41.661+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:41.708+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:41.745+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:41.781+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:41.802+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:41.833+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:41.860+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:41.892+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:41.913+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:41.951+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:41.979+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:42.013+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:42.038+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:42.069+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:42.093+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:42.122+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:42.140+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:42.174+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:42.204+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:42.237+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:42.254+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:42.286+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:42.311+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:42.342+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:42.366+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:42.396+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:42.423+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:42.550+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:42.577+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:42.630+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:42.659+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:42.693+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:42.713+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:42.749+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:43.024+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:43.059+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:43.075+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:43.105+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:43.139+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:43.174+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:43.195+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:43.236+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:43.269+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:43.313+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:43.332+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:43.367+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:43.396+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:43.430+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:43.450+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:43.482+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:43.507+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:43.541+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:43.568+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:43.599+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:43.629+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:43.667+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:43.686+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:43.717+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:43.742+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:43.779+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:43.797+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:43.828+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:43.852+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:43.885+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:43.903+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:43.932+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:43.958+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:44.090+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:44.107+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:44.137+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:44.164+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:44.197+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:44.221+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:44.258+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:44.522+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:44.561+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:44.587+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:44.622+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:44.651+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:44.683+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:44.703+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:44.741+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:44.774+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:44.808+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:44.828+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:44.861+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:44.887+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:44.918+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:44.938+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:44.975+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:23:17.350584+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:45.003+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T16:26:45.035+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:45.056+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.Door.Closed
+  time:timestamp: '2020-11-10T16:26:45.089+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.Door.Closed:
+          timestamp: '2020-11-10T16:28:09.429897+01:00'
+          ID: MaxxTurn45.Machine.Varset.Door.Closed
+          description: ''
+          name: Closed
+          path: MaxxTurn45/Machine/Varset/Door/Closed
+          source: CmiServer
+          value: true
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T16:26:45.119+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: Door
+      set_value: Close
+      check_var: MaxxTurn45.Machine.Varset.Door.Closed
+      check_value: true
+      check: true
+  time:timestamp: '2020-11-10T16:26:45.162+01:00'
+---
+event:
+  concept:instance: 2272
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: e47bb927-1bd0-44ba-b46d-0d864c817dd7
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T16:26:45.193+01:00'

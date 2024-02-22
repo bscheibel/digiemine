@@ -1,0 +1,600 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: 2873
+    cpee:name: MT45 NC Start
+    cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+---
+event:
+  concept:instance: 2873
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - set_var
+    - set_value
+    - check_var
+    - check_value
+    data_values:
+      set_var: ''
+      set_value: ''
+      check_var: ''
+      check_value: ''
+  time:timestamp: '2020-11-10T18:52:59.000+01:00'
+---
+event:
+  concept:instance: 2873
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - ep_check
+    - ep_set
+    data_values:
+      ep_check: http://localhost:8012/server/find
+      ep_set: http://localhost:8012/call/CallFunction?timeout=100&retries=10
+  time:timestamp: '2020-11-10T18:52:59.026+01:00'
+---
+event:
+  concept:instance: 2873
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    data_values:
+      info: MT45 NC Start
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+  time:timestamp: '2020-11-10T18:52:59.039+01:00'
+---
+event:
+  concept:instance: 2873
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - set_var
+    - set_value
+    - check_var
+    - check_value
+    data_values:
+      set_var: NC
+      set_value: Start
+      check_var: MaxxTurn45.Machine.Varset.NC.Active
+      check_value: 'true'
+  time:timestamp: '2020-11-10T18:52:59.466+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Set
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: var
+      value: NC
+    - name: value
+      value: Start
+  time:timestamp: '2020-11-10T18:53:00.537+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Set
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        Number1: 0
+        Time1: 0
+        Flag1: 67
+        Number2: 0
+        Time2: 0
+        Flag2: 0
+        Number3: 0
+        Time3: 0
+        Flag3: 0
+        Number4: 0
+        Time4: 0
+        Flag4: 0
+        Number5: 0
+        Time5: 0
+        Flag5: 0
+        Number6: 0
+        Time6: 0
+        Flag6: 0
+        Number7: 0
+        Time7: 0
+        Flag7: 0
+        Number8: 0
+        Time8: 0
+        Flag8: 0
+        Number9: 0
+        Time9: 0
+        Flag9: 0
+        Number10: 0
+        Time10: 0
+        Flag10: 0
+        ResInt1: 0
+        ResInt2: 0
+        ResByte: ''
+        Type: report
+        Order: 2854
+        StatusCode: Good
+  time:timestamp: '2020-11-10T18:53:00.693+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Set
+  id:id: a2
+  cpee:activity: a2
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T18:53:00.729+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.NC.Active
+  time:timestamp: '2020-11-10T18:53:00.762+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.NC.Active:
+          timestamp: '2020-11-10T18:51:26.7141973+01:00'
+          ID: MaxxTurn45.Machine.Varset.NC.Active
+          description: ''
+          name: Active
+          path: MaxxTurn45/Machine/Varset/NC/Active
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T18:53:00.795+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: NC
+      set_value: Start
+      check_var: MaxxTurn45.Machine.Varset.NC.Active
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T18:53:00.830+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T18:53:00.849+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.NC.Active
+  time:timestamp: '2020-11-10T18:53:00.880+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.NC.Active:
+          timestamp: '2020-11-10T18:51:26.7141973+01:00'
+          ID: MaxxTurn45.Machine.Varset.NC.Active
+          description: ''
+          name: Active
+          path: MaxxTurn45/Machine/Varset/NC/Active
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T18:53:00.915+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: NC
+      set_value: Start
+      check_var: MaxxTurn45.Machine.Varset.NC.Active
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T18:53:00.949+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T18:53:00.975+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.NC.Active
+  time:timestamp: '2020-11-10T18:53:01.048+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.NC.Active:
+          timestamp: '2020-11-10T18:51:26.7141973+01:00'
+          ID: MaxxTurn45.Machine.Varset.NC.Active
+          description: ''
+          name: Active
+          path: MaxxTurn45/Machine/Varset/NC/Active
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T18:53:01.110+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: NC
+      set_value: Start
+      check_var: MaxxTurn45.Machine.Varset.NC.Active
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T18:53:01.290+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T18:53:01.308+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.NC.Active
+  time:timestamp: '2020-11-10T18:53:01.359+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.NC.Active:
+          timestamp: '2020-11-10T18:51:26.7141973+01:00'
+          ID: MaxxTurn45.Machine.Varset.NC.Active
+          description: ''
+          name: Active
+          path: MaxxTurn45/Machine/Varset/NC/Active
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T18:53:01.391+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: NC
+      set_value: Start
+      check_var: MaxxTurn45.Machine.Varset.NC.Active
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T18:53:01.503+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T18:53:01.522+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.NC.Active
+  time:timestamp: '2020-11-10T18:53:01.550+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.NC.Active:
+          timestamp: '2020-11-10T18:51:26.7141973+01:00'
+          ID: MaxxTurn45.Machine.Varset.NC.Active
+          description: ''
+          name: Active
+          path: MaxxTurn45/Machine/Varset/NC/Active
+          source: CmiServer
+          value: false
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T18:53:01.815+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: NC
+      set_value: Start
+      check_var: MaxxTurn45.Machine.Varset.NC.Active
+      check_value: true
+      check: false
+  time:timestamp: '2020-11-10T18:53:01.905+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T18:53:01.926+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.Varset.NC.Active
+  time:timestamp: '2020-11-10T18:53:01.953+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.Varset.NC.Active:
+          timestamp: '2020-11-10T18:54:27.7525153+01:00'
+          ID: MaxxTurn45.Machine.Varset.NC.Active
+          description: ''
+          name: Active
+          path: MaxxTurn45/Machine/Varset/NC/Active
+          source: CmiServer
+          value: true
+          meta:
+            type: System.Boolean
+            enumeration: 
+  time:timestamp: '2020-11-10T18:53:01.985+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      set_var: NC
+      set_value: Start
+      check_var: MaxxTurn45.Machine.Varset.NC.Active
+      check_value: true
+      check: true
+  time:timestamp: '2020-11-10T18:53:02.017+01:00'
+---
+event:
+  concept:instance: 2873
+  concept:name: Check State
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 1e8e8ce2-68f7-44b8-a1b8-d95ccdc63a92
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T18:53:02.044+01:00'

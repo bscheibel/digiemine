@@ -1,0 +1,388 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: '2355'
+    cpee:name: GV12 Keyence Measurement
+    cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+---
+event:
+  concept:instance: '2355'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - machine
+    - program
+    - program_path
+    - trigger
+    - trigger_start
+    - trigger_pause
+    - trigger_end
+    - label
+    data_values:
+      machine: keyence
+      program: gfrast1
+      program_path: program
+      trigger: state
+      trigger_start: active
+      trigger_pause: notpossible
+      trigger_end: inactive
+      label: ''
+    data_received: 
+  time:timestamp: '2019-12-10T19:04:04.952+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - timeout
+    - start_instance
+    - start_url
+    - when
+    - delete
+    - measure
+    - decide
+    data_values:
+      timeout: http://gruppe.wst.univie.ac.at/~mangler/services/timeout.php
+      start_instance: https://centurio.work/flow/start/instance/
+      start_url: https://centurio.work/flow/start/url/
+      when: https-get://centurio.work/data/dpnorth/when/
+      delete: https-delete://centurio.work/data/dpnorth/when/
+      measure: https://centurio.work/out/measure/tasks/
+      decide: https://centurio.work/out/finished/tasks/
+    data_received: 
+  time:timestamp: '2019-12-10T19:04:05.054+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    data_values:
+      info: GV12 Keyence Measurement
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+    data_received: 
+  time:timestamp: '2019-12-10T19:04:05.107+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - machine
+    - program
+    - program_path
+    - trigger
+    - trigger_start
+    - trigger_pause
+    - trigger_end
+    - label
+    - event_batch
+    - stream_handling
+    data_values:
+      machine: keyence
+      program: gfrast1
+      program_path: program
+      trigger: state
+      trigger_start: active
+      trigger_pause: notpossible
+      trigger_end: inactive
+      label: GV12 Keyence Measuring
+      event_batch: 10
+      stream_handling: https://centurio.work/customers/prime/stream_handling/matthias_measuring.xml
+    data_received: 
+  time:timestamp: '2019-12-10T19:04:05.213+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: Detection Machining
+  concept:endpoint: https-get://centurio.work/data/dpnorth/when/
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: 0c651a6b7700308938e78598afe0dbbe
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: machine
+      value: keyence
+    - name: program_path
+      value: program
+    - name: program_value
+      value: gfrast1
+    - name: trigger_path
+      value: state
+    - name: trigger_start_value
+      value: active
+    - name: trigger_pause_value
+      value: notpossible
+    - name: trigger_end_value
+      value: inactive
+    - name: event_batch
+      value: 10
+    - name: refinement
+      value: 'no'
+    data_received: 
+  time:timestamp: '2019-12-10T19:04:06.037+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: Detection Machining
+  concept:endpoint: https-get://centurio.work/data/dpnorth/when/
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: 0c651a6b7700308938e78598afe0dbbe
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: text
+      mimetype: text/plain
+      data: keyence/1576001144.517258
+  time:timestamp: '2019-12-10T19:05:44.699+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: Detection Machining
+  concept:endpoint: https-get://centurio.work/data/dpnorth/when/
+  id:id: a4
+  cpee:activity: a4
+  cpee:activity_uuid: 0c651a6b7700308938e78598afe0dbbe
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-12-10T19:05:44.894+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: Detection Machining
+  concept:endpoint: https-get://centurio.work/data/dpnorth/when/
+  id:id: a4
+  cpee:activity: a4
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - queue
+    data_values:
+      machine: keyence
+      program: gfrast1
+      program_path: program
+      trigger: state
+      trigger_start: active
+      trigger_pause: notpossible
+      trigger_end: inactive
+      label: GV12 Keyence Measuring
+      event_batch: 10
+      stream_handling: https://centurio.work/customers/prime/stream_handling/matthias_measuring.xml
+      queue: keyence/1576001144.517258
+    data_received: 
+  time:timestamp: '2019-12-10T19:05:45.048+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: a5ec20c25f2efa42dc265411dbc140d5
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: GV12 Keyence Measuring
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/Machining%20V2.xml
+    - name: init
+      value: '{ "queue": "keyence/1576001144.517258" }'
+    - name: stream
+      value: '[ { "id": "a1", "url": "https://centurio.work/customers/prime/stream_handling/matthias_measuring.xml"
+        } ]'
+    data_received: 
+  time:timestamp: '2019-12-10T19:05:45.191+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: a5ec20c25f2efa42dc265411dbc140d5
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2376'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2376
+        CPEE-INSTANCE-UUID: c6c89925-098c-4e9c-8d66-696c18a11a21
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-12-10T19:05:48.516+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2376'
+      CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2376
+      CPEE-INSTANCE-UUID: c6c89925-098c-4e9c-8d66-696c18a11a21
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-12-10T19:05:48.632+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: a5ec20c25f2efa42dc265411dbc140d5
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2376'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2376
+        CPEE-INSTANCE-UUID: c6c89925-098c-4e9c-8d66-696c18a11a21
+        CPEE-STATE: running
+  time:timestamp: '2019-12-10T19:05:48.717+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: a5ec20c25f2efa42dc265411dbc140d5
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2376'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2376
+        CPEE-INSTANCE-UUID: c6c89925-098c-4e9c-8d66-696c18a11a21
+        CPEE-STATE: finished
+        queue: keyence/1576001144.517258
+  time:timestamp: '2019-12-10T19:06:15.912+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - finished
+    - queue
+    data_values:
+      machine: keyence
+      program: gfrast1
+      program_path: program
+      trigger: state
+      trigger_start: active
+      trigger_pause: notpossible
+      trigger_end: inactive
+      label: GV12 Keyence Measuring
+      event_batch: 10
+      stream_handling: https://centurio.work/customers/prime/stream_handling/matthias_measuring.xml
+      queue: 
+      finished: 'yes'
+    data_received: 
+  time:timestamp: '2019-12-10T19:06:16.403+01:00'
+---
+event:
+  concept:instance: '2355'
+  concept:name: Machining
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: a5ec20c25f2efa42dc265411dbc140d5
+  cpee:instance: 5bb63c1f-9f5f-461e-91bb-ba7870e0c7c8
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-12-10T19:06:16.973+01:00'

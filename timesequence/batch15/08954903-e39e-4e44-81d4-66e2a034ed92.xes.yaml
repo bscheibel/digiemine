@@ -1,0 +1,181 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: '2684'
+    cpee:name: Get MT45 State
+    cpee:instance: '08954903-e39e-4e44-81d4-66e2a034ed92'
+---
+event:
+  concept:instance: '2684'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: '08954903-e39e-4e44-81d4-66e2a034ed92'
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check_var
+    data_values:
+      check_var: ''
+    data_received: 
+  time:timestamp: '2019-12-10T21:37:28.265+01:00'
+---
+event:
+  concept:instance: '2684'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: '08954903-e39e-4e44-81d4-66e2a034ed92'
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - ep_check
+    data_values:
+      ep_check: http://localhost:8012/server/find
+    data_received: 
+  time:timestamp: '2019-12-10T21:37:28.313+01:00'
+---
+event:
+  concept:instance: '2684'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: '08954903-e39e-4e44-81d4-66e2a034ed92'
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    data_values:
+      info: Get MT45 State
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+    data_received: 
+  time:timestamp: '2019-12-10T21:37:28.349+01:00'
+---
+event:
+  concept:instance: '2684'
+  concept:name: external
+  id:id: external
+  cpee:activity: external
+  cpee:instance: '08954903-e39e-4e44-81d4-66e2a034ed92'
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check_var
+    data_values:
+      check_var: MaxxTurn45.Machine.NC
+    data_received: 
+  time:timestamp: '2019-12-10T21:37:28.455+01:00'
+---
+event:
+  concept:instance: '2684'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: a44a849d9dad035a0076533e2fe50d3a
+  cpee:instance: '08954903-e39e-4e44-81d4-66e2a034ed92'
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: regex
+      value: MaxxTurn45.Machine.NC
+    data_received: 
+  time:timestamp: '2019-12-10T21:37:28.977+01:00'
+---
+event:
+  concept:instance: '2684'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: a44a849d9dad035a0076533e2fe50d3a
+  cpee:instance: '08954903-e39e-4e44-81d4-66e2a034ed92'
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - check
+    data_values:
+      check_var: MaxxTurn45.Machine.NC
+      check: Cancelled
+    data_received: 
+  time:timestamp: '2019-12-10T21:37:29.136+01:00'
+---
+event:
+  concept:instance: '2684'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: a44a849d9dad035a0076533e2fe50d3a
+  cpee:instance: '08954903-e39e-4e44-81d4-66e2a034ed92'
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-12-10T21:37:29.197+01:00'
+---
+event:
+  concept:instance: '2684'
+  concept:name: Check State
+  concept:endpoint: http://localhost:8012/server/find
+  id:id: a1
+  cpee:activity: a1
+  cpee:activity_uuid: a44a849d9dad035a0076533e2fe50d3a
+  cpee:instance: '08954903-e39e-4e44-81d4-66e2a034ed92'
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: result
+      mimetype: application/json
+      data:
+        MaxxTurn45.Machine.NC:
+          timestamp: '2019-12-10T21:36:36.2377053+01:00'
+          ID: MaxxTurn45.Machine.NC
+          description: ''
+          name: NC
+          path: MaxxTurn45/Machine/NC
+          source: CmiServer
+          value: Cancelled
+          meta:
+            type: System.String
+            enumeration: 
+  time:timestamp: '2019-12-10T21:37:29.224+01:00'

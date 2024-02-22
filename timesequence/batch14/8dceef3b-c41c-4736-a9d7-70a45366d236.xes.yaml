@@ -1,0 +1,244 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: '2289'
+    cpee:name: MT45 Check Operational Safety
+    cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+---
+event:
+  concept:instance: '2289'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - ipc_receive
+    - magazine_x
+    - magazine_z
+    data_values:
+      ipc_receive: https-get://centurio.work/ing/correlators/message/receive/
+      magazine_x: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/X/aaLeadP
+      magazine_z: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/Z/aaLeadP
+    data_received: 
+  time:timestamp: '2019-11-14T21:07:34.891+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    - artefacts
+    data_values:
+      info: MT45 Check Operational Safety
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+      artefacts: '[ { "group": "Orders", "name": "GV12" } ]'
+    data_received: 
+  time:timestamp: '2019-11-14T21:07:34.912+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - initial
+    data_values:
+      initial: true
+    data_received: 
+  time:timestamp: '2019-11-14T21:07:34.988+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - initial
+    data_values:
+      initial: data.initial
+    data_received: 
+  time:timestamp: '2019-11-14T21:07:35.133+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: Not First Part
+  id:id: a6
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-14T21:07:35.638+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: Not First Part
+  id:id: a6
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - initial
+    data_values:
+      initial: false
+    data_received: 
+  time:timestamp: '2019-11-14T21:07:35.713+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: Get Magazine X
+  concept:endpoint: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/X/aaLeadP
+  id:id: a3
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-14T21:07:35.849+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: Get Magazine X
+  concept:endpoint: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/X/aaLeadP
+  id:id: a3
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: text
+      mimetype: text/plain
+      data: 215.7
+  time:timestamp: '2019-11-14T21:07:35.946+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: Get Magazine X
+  concept:endpoint: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/X/aaLeadP
+  id:id: a3
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-14T21:07:36.006+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: Get Magazine X
+  concept:endpoint: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/X/aaLeadP
+  id:id: a3
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - magazine_x
+    data_values:
+      initial: false
+      magazine_x: 215.7
+    data_received: 
+  time:timestamp: '2019-11-14T21:07:36.138+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: Get Magazine Z
+  concept:endpoint: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/Z/aaLeadP
+  id:id: a5
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-14T21:07:36.188+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: Get Magazine Z
+  concept:endpoint: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/Z/aaLeadP
+  id:id: a5
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: text
+      mimetype: text/plain
+      data: 601.5
+  time:timestamp: '2019-11-14T21:07:36.220+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: Get Magazine Z
+  concept:endpoint: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/Z/aaLeadP
+  id:id: a5
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - magazine_z
+    data_values:
+      initial: false
+      magazine_x: 215.7
+      magazine_z: 601.5
+    data_received: 
+  time:timestamp: '2019-11-14T21:07:36.261+01:00'
+---
+event:
+  concept:instance: '2289'
+  concept:name: Get Magazine Z
+  concept:endpoint: https://centurio.work/data/dpnorth/values/MaxxTurn45/Axis/Z/aaLeadP
+  id:id: a5
+  cpee:uuid: 8dceef3b-c41c-4736-a9d7-70a45366d236
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-14T21:07:36.292+01:00'

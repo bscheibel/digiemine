@@ -1,0 +1,549 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: '2709'
+    cpee:name: MT45 Start
+    cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+---
+event:
+  concept:instance: '2709'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - start_url
+    data_values:
+      start_url: https://centurio.work/flow/start/url/
+    data_received: 
+  time:timestamp: '2019-11-15T14:35:34.012+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - url
+    data_values:
+      url: ''
+    data_received: 
+  time:timestamp: '2019-11-15T14:35:34.016+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    - artefacts
+    data_values:
+      info: MT45 Start
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+      artefacts: '[ { "group": "Orders", "name": "GV12" } ]'
+    data_received: 
+  time:timestamp: '2019-11-15T14:35:34.020+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: external
+  id:id: external
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  data:
+    data_changer:
+    - url
+    data_values:
+      url: https://centurio.work/artefacts/etm/MT45/raw/master/GV12_VALVELIFTER.mpf
+    data_received: 
+  time:timestamp: '2019-11-15T14:35:34.047+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Aux On
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: MT45 Aux On
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/X%20MT45%20Control%20Setter.xml
+    - name: init
+      value: '{ "set_var": "Aux", "set_value": "On", "check_var": "MaxxTurn45.Machine.Varset.Aux.On",
+        "check_value": "true" }'
+    data_received: 
+  time:timestamp: '2019-11-15T14:35:35.888+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Aux On
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2710'
+      CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2710
+      CPEE-INSTANCE-UUID: 3121a502-0b3b-446b-9d3c-d41c8cb76f00
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-11-15T14:35:36.404+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Aux On
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2710'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2710
+        CPEE-INSTANCE-UUID: 3121a502-0b3b-446b-9d3c-d41c8cb76f00
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-11-15T14:35:36.532+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Aux On
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2710'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2710
+        CPEE-INSTANCE-UUID: 3121a502-0b3b-446b-9d3c-d41c8cb76f00
+        CPEE-STATE: running
+  time:timestamp: '2019-11-15T14:35:37.024+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Aux On
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-15T14:35:37.342+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Aux On
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a1
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2710'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2710
+        CPEE-INSTANCE-UUID: 3121a502-0b3b-446b-9d3c-d41c8cb76f00
+        CPEE-STATE: finished
+        set_var: Aux
+        set_value: 'On'
+        check_var: MaxxTurn45.Machine.Varset.Aux.On
+        check_value: true
+        check: true
+  time:timestamp: '2019-11-15T14:35:37.459+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Mode Auto
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a3
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: MT45 Mode Auto
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/X%20MT45%20Control%20Setter.xml
+    - name: init
+      value: '{ "set_var": "Mode", "set_value": "Auto", "check_var": "MaxxTurn45.Machine.Varset.Mode.Auto",
+        "check_value": "true" }'
+    data_received: 
+  time:timestamp: '2019-11-15T14:35:37.524+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Mode Auto
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a3
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2711'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2711
+        CPEE-INSTANCE-UUID: c5740974-32b7-4f7e-9cd5-dc5f475f884a
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-11-15T14:35:38.490+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Mode Auto
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a3
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2711'
+      CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2711
+      CPEE-INSTANCE-UUID: c5740974-32b7-4f7e-9cd5-dc5f475f884a
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-11-15T14:35:38.518+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Mode Auto
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a3
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2711'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2711
+        CPEE-INSTANCE-UUID: c5740974-32b7-4f7e-9cd5-dc5f475f884a
+        CPEE-STATE: running
+  time:timestamp: '2019-11-15T14:35:39.189+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Mode Auto
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a3
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2711'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2711
+        CPEE-INSTANCE-UUID: c5740974-32b7-4f7e-9cd5-dc5f475f884a
+        CPEE-STATE: finished
+        set_var: Mode
+        set_value: Auto
+        check_var: MaxxTurn45.Machine.Varset.Mode.Auto
+        check_value: true
+        check: true
+  time:timestamp: '2019-11-15T14:35:40.593+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Mode Auto
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a3
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-15T14:35:40.649+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Door Close
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a5
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: MT45 Door Close
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/X%20MT45%20Control%20Setter.xml
+    - name: init
+      value: '{ "set_var": "Door", "set_value": "Close", "check_var": "MaxxTurn45.Machine.Varset.Door.Closed",
+        "check_value": "true" }'
+    data_received: 
+  time:timestamp: '2019-11-15T14:35:40.790+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Door Close
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a5
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2713'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2713
+        CPEE-INSTANCE-UUID: 7f7bc358-96f8-4c66-965c-401b3d6a7481
+        CPEE-STATE: running
+  time:timestamp: '2019-11-15T14:35:42.895+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Door Close
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a5
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2713'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2713
+        CPEE-INSTANCE-UUID: 7f7bc358-96f8-4c66-965c-401b3d6a7481
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-11-15T14:35:42.910+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Door Close
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a5
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2713'
+      CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2713
+      CPEE-INSTANCE-UUID: 7f7bc358-96f8-4c66-965c-401b3d6a7481
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-11-15T14:35:42.936+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Door Close
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a5
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2713'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2713
+        CPEE-INSTANCE-UUID: 7f7bc358-96f8-4c66-965c-401b3d6a7481
+        CPEE-STATE: finished
+        set_var: Door
+        set_value: Close
+        check_var: MaxxTurn45.Machine.Varset.Door.Closed
+        check_value: true
+        check: true
+  time:timestamp: '2019-11-15T14:35:47.485+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: Door Close
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a5
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-15T14:35:47.555+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: NC Start
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a6
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: MT45 NC Start
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/X%20MT45%20Control%20Setter.xml
+    - name: init
+      value: '{ "set_var": "NC", "set_value": "Start", "check_var": "MaxxTurn45.Machine.Varset.NC.Active",
+        "check_value": "true" }'
+    data_received: 
+  time:timestamp: '2019-11-15T14:35:48.105+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: NC Start
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a6
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2714'
+      CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2714
+      CPEE-INSTANCE-UUID: 3025c855-2e1d-41c5-bd7d-676b422d92c5
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-11-15T14:35:49.537+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: NC Start
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a6
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2714'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2714
+        CPEE-INSTANCE-UUID: 3025c855-2e1d-41c5-bd7d-676b422d92c5
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2019-11-15T14:35:49.595+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: NC Start
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a6
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2714'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2714
+        CPEE-INSTANCE-UUID: 3025c855-2e1d-41c5-bd7d-676b422d92c5
+        CPEE-STATE: running
+  time:timestamp: '2019-11-15T14:35:49.707+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: NC Start
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a6
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2714'
+        CPEE-INSTANCE-URL: https://centurio.work/flow/engine/2714
+        CPEE-INSTANCE-UUID: 3025c855-2e1d-41c5-bd7d-676b422d92c5
+        CPEE-STATE: finished
+        set_var: NC
+        set_value: Start
+        check_var: MaxxTurn45.Machine.Varset.NC.Active
+        check_value: true
+        check: true
+  time:timestamp: '2019-11-15T14:35:55.210+01:00'
+---
+event:
+  concept:instance: '2709'
+  concept:name: NC Start
+  concept:endpoint: https://centurio.work/flow/start/url/
+  id:id: a6
+  cpee:uuid: 2ebfc498-fd89-4bdc-a2c8-879e8b11e59e
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  data:
+    data_receiver: 
+  time:timestamp: '2019-11-15T14:35:55.252+01:00'

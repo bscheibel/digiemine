@@ -1,0 +1,414 @@
+---
+log:
+  extension:
+    time: http://www.xes-standard.org/time.xesext
+    concept: http://www.xes-standard.org/concept.xesext
+    organisational: http://www.xes-standard.org/org.xesext
+    lifecycle: http://www.xes-standard.org/lifecycle.xesext
+    cpee: http://cpee.org/cpee.xesext
+  global:
+    trace:
+      concept:name: __INVALID__
+      cpee:name: __INVALID__
+    event:
+      concept:instance: -1
+      concept:name: __INVALID__
+      concept:endpoint: ''
+      id:id: ''
+      cpee:uuid: ''
+      lifecycle:transition: complete
+      cpee:lifecycle:transition: activity/calling
+      time:timestamp: ''
+  classifier:
+    Data: data_send data_received data_changed data_values
+    Data_Received: data_receiver
+    Data_Send: data_send
+    Data_Changed: data_changer
+    Data_Values: data_values
+  trace:
+    concept:name: 2018
+    cpee:name: Turm IRB2600 Extract
+    cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+---
+event:
+  concept:instance: 2018
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: dataelements/change
+  time:timestamp: '2020-11-10T15:25:47.954+01:00'
+---
+event:
+  concept:instance: 2018
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: endpoints/change
+  data:
+    data_changer:
+    - start_url
+    data_values:
+      start_url: https://centurio.work/flow-test/start/url/
+  time:timestamp: '2020-11-10T15:25:47.986+01:00'
+---
+event:
+  concept:instance: 2018
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: attributes/change
+  data:
+    data_changer:
+    - info
+    - modeltype
+    - theme
+    - customer
+    - status
+    - artefacts
+    data_values:
+      info: Turm IRB2600 Extract
+      modeltype: CPEE
+      theme: default
+      customer: pilotfabrik
+      status: development
+      artefacts: '[ { "group": "Orders", "name": "Turm" } ]'
+  time:timestamp: '2020-11-10T15:25:47.996+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 Take to GS
+  id:id: a13
+  cpee:activity: a13
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: IRB2600 Take to GS
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/r/turm-v2/X%20IRB2600%20Execution.xml
+    - name: init
+      value: '{ "includes": "https://centurio.work/artefacts/etm/IRB2600/raw/master/Generic/Turm_General.mod",
+        "move": "https://centurio.work/artefacts/etm/IRB2600/raw/master/Turm/move_GS_to_preGS.mod"
+        }'
+  time:timestamp: '2020-11-10T15:25:49.280+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 Take to GS
+  id:id: a13
+  cpee:activity: a13
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2019'
+      CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2019
+      CPEE-INSTANCE-UUID: c62ee722-d074-4e70-841c-d53c0a832ed6
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2020-11-10T15:25:50.226+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 Take to GS
+  id:id: a13
+  cpee:activity: a13
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2019'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2019
+        CPEE-INSTANCE-UUID: c62ee722-d074-4e70-841c-d53c0a832ed6
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2020-11-10T15:25:50.247+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 Take to GS
+  id:id: a13
+  cpee:activity: a13
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2019'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2019
+        CPEE-INSTANCE-UUID: c62ee722-d074-4e70-841c-d53c0a832ed6
+        CPEE-STATE: running
+  time:timestamp: '2020-11-10T15:25:51.199+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 Take to GS
+  id:id: a13
+  cpee:activity: a13
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2019'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2019
+        CPEE-INSTANCE-UUID: c62ee722-d074-4e70-841c-d53c0a832ed6
+        CPEE-STATE: finished
+        includes: https://centurio.work/artefacts/etm/IRB2600/raw/master/Generic/Turm_General.mod
+        program: "MODULE OperationModule\n\n    \n  PERS tooldata tool_Parallelgreifer_Standard:=[TRUE,[[0,0,138.9],[1,0,0,0]],[1,[0,0,1],[1,0,0,0],0,0,0]];\n\n
+          \ PERS wobjdata wobj_Palette:=[FALSE,TRUE,\"\",[[-701.200489371,303.066515226,114.117418405],[0.006407291,-0.380247924,-0.924858642,-0.002637288]],[[0,0,0],[1,0,0,0]]];\n\n\n
+          \ CONST robtarget GSTurnPostion:=[[1341.949321861,882.990678099,397.83],[0.27059805,-0.27059805,0.653281482,-0.653281482],[0,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget GSAlignmentPosition:=[[1387.89,836.78,398.47],[0.403348,-0.084463,0.716953,-0.562276],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+          \ \n\n  CONST robtarget GV12GSGrabPosition:=[[1397.57,822.35,399.83],[0.404036,-0.0845578,0.715923,-0.56308],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+          \n\n\n\n\n  PROC Operation()\n    MoveL GV12GSGrabPosition,vVerySlow,fine,tool_Parallelgreifer_Standard\\WObj:=wobj0;\n
+          \   MoveL GSAlignmentPosition,vSlow,z10,tool_Parallelgreifer_Standard\\WObj:=wobj0;\n
+          \   MoveL GSTurnPostion,vSlow,z10,tool_Parallelgreifer_Standard\\WObj:=wobj0;\n
+          \ ENDPROC\n\n\nENDMODULE"
+        started: true
+        urls: []
+        xxx:
+          timestamp: '2020-11-10T14:51:45.6261383+01:00'
+          ID: PF_IRB2600.Controller.State
+          description: ''
+          name: State
+          path: PF_IRB2600/Controller/State
+          source: RobotService
+          value: MotorsOn
+          meta:
+            type: ABB.Robotics.Controllers.ControllerState
+            enumeration:
+            - Init
+            - MotorsOff
+            - MotorsOn
+            - GuardStop
+            - EmergencyStop
+            - EmergencyStopReset
+            - SystemFailure
+            - Unknown
+        move: https://centurio.work/artefacts/etm/IRB2600/raw/master/Turm/move_GS_to_preGS.mod
+        vars: "\n    \n  PERS tooldata tool_Parallelgreifer_Standard:=[TRUE,[[0,0,138.9],[1,0,0,0]],[1,[0,0,1],[1,0,0,0],0,0,0]];\n\n
+          \ PERS wobjdata wobj_Palette:=[FALSE,TRUE,\"\",[[-701.200489371,303.066515226,114.117418405],[0.006407291,-0.380247924,-0.924858642,-0.002637288]],[[0,0,0],[1,0,0,0]]];\n\n\n
+          \ CONST robtarget GSTurnPostion:=[[1341.949321861,882.990678099,397.83],[0.27059805,-0.27059805,0.653281482,-0.653281482],[0,-2,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget GSAlignmentPosition:=[[1387.89,836.78,398.47],[0.403348,-0.084463,0.716953,-0.562276],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+          \ \n\n  CONST robtarget GV12GSGrabPosition:=[[1397.57,822.35,399.83],[0.404036,-0.0845578,0.715923,-0.56308],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+          \n\n"
+        yyy:
+          timestamp: '2020-11-10T15:27:22.3930913+01:00'
+          ID: PF_IRB2600.Controller.StateMachine
+          description: ''
+          name: StateMachine
+          path: PF_IRB2600/Controller/StateMachine
+          source: RobotService
+          value: Finished
+          meta:
+            type: System.String
+            enumeration: 
+        state: MotorsOn
+        x: 0
+        statemachine: Finished
+        y: 0
+        z: 0
+        gripper: Open
+        check_var1: PF_IRB2600.Controller.State
+        check_var2: PF_IRB2600.Controller.StateMachine
+  time:timestamp: '2020-11-10T15:25:59.802+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 Take to GS
+  id:id: a13
+  cpee:activity: a13
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T15:25:59.833+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 GS to Door
+  id:id: a18
+  cpee:activity: a18
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: start
+  cpee:lifecycle:transition: activity/calling
+  data:
+    data_send:
+    - name: info
+      value: IRB2600 IRB2600 GS to Door
+    - name: behavior
+      value: wait_running
+    - name: url
+      value: https://centurio.work/customers/prime/r/turm-v2/X%20IRB2600%20Execution.xml
+    - name: init
+      value: '{ "includes": "https://centurio.work/artefacts/etm/IRB2600/raw/master/Generic/Turm_General.mod",
+        "move": "https://centurio.work/artefacts/etm/IRB2600/raw/master/Generic/move_GS_to_Door2.mod"
+        }'
+  time:timestamp: '2020-11-10T15:25:59.864+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 GS to Door
+  id:id: a18
+  cpee:activity: a18
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: task/instantiation
+  data:
+    data_receiver:
+      CPEE-INSTANCE: '2020'
+      CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2020
+      CPEE-INSTANCE-UUID: dfa4e385-6212-4aa9-851e-82186ea174eb
+      CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2020-11-10T15:26:00.778+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 GS to Door
+  id:id: a18
+  cpee:activity: a18
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: instance
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2020'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2020
+        CPEE-INSTANCE-UUID: dfa4e385-6212-4aa9-851e-82186ea174eb
+        CPEE-BEHAVIOR: wait_running
+  time:timestamp: '2020-11-10T15:26:00.810+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 GS to Door
+  id:id: a18
+  cpee:activity: a18
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2020'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2020
+        CPEE-INSTANCE-UUID: dfa4e385-6212-4aa9-851e-82186ea174eb
+        CPEE-STATE: running
+  time:timestamp: '2020-11-10T15:26:01.781+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 GS to Door
+  id:id: a18
+  cpee:activity: a18
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: activity/receiving
+  data:
+    data_receiver:
+    - name: dataelements
+      mimetype: application/json
+      data:
+        CPEE-INSTANCE: '2020'
+        CPEE-INSTANCE-URL: https://centurio.work/flow-test/engine/2020
+        CPEE-INSTANCE-UUID: dfa4e385-6212-4aa9-851e-82186ea174eb
+        CPEE-STATE: finished
+        includes: https://centurio.work/artefacts/etm/IRB2600/raw/master/Generic/Turm_General.mod
+        program: "MODULE OperationModule\n\n    \n  PERS tooldata tool_Parallelgreifer_Standard:=[TRUE,[[0,0,138.9],[1,0,0,0]],[1,[0,0,1],[1,0,0,0],0,0,0]];\n\n
+          \ PERS wobjdata wobj_Palette:=[FALSE,TRUE,\"\",[[-701.200489371,303.066515226,114.117418405],[0.006407291,-0.380247924,-0.924858642,-0.002637288]],[[0,0,0],[1,0,0,0]]];\n\n\n
+          \ CONST robtarget DoorEntry:=[[847.45,612.71,199.50],[0.0993855,0.0728658,-0.990774,0.0563939],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget EntryPoint1:=[[1180.59,931.41,331.77],[0.362719,-0.221471,0.890985,0.159787],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget EntryPoint:=[[1271.27,889.80,357.73],[0.320246,-0.278627,0.863352,-0.272823],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget GSEntryPosition:=[[1303.37,879.39,373.07],[0.284702,-0.286769,0.803646,-0.436877],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget GSEntryPathPosition:=[[1333.44,869.69,387.48],[0.243076,-0.286142,0.724378,-0.578199],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget GSTurnPostion:=[[1353.63,863.14,397.17],[0.211379,-0.281109,0.659804,-0.664045],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget MT45Front:=[[590.00,496.81,464.50],[0.0121928,0.272635,0.962033,-0.00373303],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n\n\n\n
+          \ PROC Operation()\n    !*******************************\n    ! Von S3 zu
+          S2\n    !*******************************\n    MoveL GSTurnPostion,vSlow,z10,tool_Parallelgreifer_Standard\\WObj:=wobj0;\n
+          \   MoveL GSEntryPathPosition,vMedium,z50,tool_Parallelgreifer_Standard\\WObj:=wobj0;\n
+          \   MoveL GSEntryPosition,vMedium,z50,tool_Parallelgreifer_Standard\\WObj:=wobj0;\n
+          \   MoveL EntryPoint,vMedium,z50,tool_Parallelgreifer_Standard\\WObj:=wobj0;\n
+          \   MoveL EntryPoint1,vMedium,z50,tool_Parallelgreifer_Standard\\WObj:=wobj0;\n
+          \   MoveL DoorEntry,vFast,z50,tool_Parallelgreifer_Standard\\WObj:=wobj0;\n
+          \   MoveL MT45Front,vFast,z50,tool_Parallelgreifer_Standard\\WObj:=wobj0;\n
+          \ ENDPROC\n\n\n\nENDMODULE"
+        started: true
+        urls: []
+        xxx:
+          timestamp: '2020-11-10T14:51:45.6261383+01:00'
+          ID: PF_IRB2600.Controller.State
+          description: ''
+          name: State
+          path: PF_IRB2600/Controller/State
+          source: RobotService
+          value: MotorsOn
+          meta:
+            type: ABB.Robotics.Controllers.ControllerState
+            enumeration:
+            - Init
+            - MotorsOff
+            - MotorsOn
+            - GuardStop
+            - EmergencyStop
+            - EmergencyStopReset
+            - SystemFailure
+            - Unknown
+        move: https://centurio.work/artefacts/etm/IRB2600/raw/master/Generic/move_GS_to_Door2.mod
+        vars: "\n    \n  PERS tooldata tool_Parallelgreifer_Standard:=[TRUE,[[0,0,138.9],[1,0,0,0]],[1,[0,0,1],[1,0,0,0],0,0,0]];\n\n
+          \ PERS wobjdata wobj_Palette:=[FALSE,TRUE,\"\",[[-701.200489371,303.066515226,114.117418405],[0.006407291,-0.380247924,-0.924858642,-0.002637288]],[[0,0,0],[1,0,0,0]]];\n\n\n
+          \ CONST robtarget DoorEntry:=[[847.45,612.71,199.50],[0.0993855,0.0728658,-0.990774,0.0563939],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget EntryPoint1:=[[1180.59,931.41,331.77],[0.362719,-0.221471,0.890985,0.159787],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget EntryPoint:=[[1271.27,889.80,357.73],[0.320246,-0.278627,0.863352,-0.272823],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget GSEntryPosition:=[[1303.37,879.39,373.07],[0.284702,-0.286769,0.803646,-0.436877],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget GSEntryPathPosition:=[[1333.44,869.69,387.48],[0.243076,-0.286142,0.724378,-0.578199],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget GSTurnPostion:=[[1353.63,863.14,397.17],[0.211379,-0.281109,0.659804,-0.664045],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n
+          \ CONST robtarget MT45Front:=[[590.00,496.81,464.50],[0.0121928,0.272635,0.962033,-0.00373303],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];\n\n"
+        yyy:
+          timestamp: '2020-11-10T15:27:35.5751145+01:00'
+          ID: PF_IRB2600.Controller.StateMachine
+          description: ''
+          name: StateMachine
+          path: PF_IRB2600/Controller/StateMachine
+          source: RobotService
+          value: Finished
+          meta:
+            type: System.String
+            enumeration: 
+        state: MotorsOn
+        x: 0
+        statemachine: Finished
+        y: 0
+        z: 0
+        gripper: Open
+        check_var1: PF_IRB2600.Controller.State
+        check_var2: PF_IRB2600.Controller.StateMachine
+  time:timestamp: '2020-11-10T15:26:12.003+01:00'
+---
+event:
+  concept:instance: 2018
+  concept:name: IRB2600 GS to Door
+  id:id: a18
+  cpee:activity: a18
+  cpee:instance: 2440cd6d-f234-413b-8580-f712c3b47ebb
+  lifecycle:transition: complete
+  cpee:lifecycle:transition: activity/done
+  time:timestamp: '2020-11-10T15:26:12.033+01:00'
