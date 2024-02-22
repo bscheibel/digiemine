@@ -11,6 +11,9 @@ from edt_ts import time_series as ts
 import fitz
 import json
 
+import os
+cwd = os.getcwd()
+
 def get_times(fp,data):
     timeValue = -1
     for cnt, line in enumerate(fp):
@@ -188,7 +191,7 @@ def get_infos(file_ts, use_case):
     with open("archive/measuring_results.csv", "w") as f:
         for name in names:
              df_ts = get_infos_from_logs(name, use_case)
-             df_timeseries = df_timeseries.append(df_ts)
+             df_timeseries = pd.concat([df_timeseries, df_ts])
     if use_case == "gv12":
         add_colums = ["bound1", "bound2", "bound3", "bound4", "bound5", "bound6", "bound7", "bound8", "bound9", "bound10", "bound11", "bound12"]
     if use_case == "turm":
@@ -274,17 +277,17 @@ def visualize_on_drawing(drawing, file_tol, str_rule, use_case):
 
 
 if __name__ == '__main__':
-    use_case = "synthetic"
-    wd = "/home/beatescheibel/PycharmProjects/"
+    use_case = "gv12"
+    #wd = cwd + "/home/beatescheibel/PycharmProjects/"
 
     if use_case == "gv12":
-        drawing = wd + "digiemine/techdraw/drawings/GV_12.PDF"
+        drawing = cwd + "/techdraw/drawings/GV_12.PDF"
         folder = "batch14"
         file_ts = "data/measuring_intimeseriesGV12.csv"
         file_tol = "data/gv12tolerances_extracted.txt"
 
     if use_case == "turm":
-        drawing = wd + "/digiemine/techdraw/drawings/Turm.pdf"
+        drawing = cwd + "/techdraw/drawings/Turm.pdf"
         boundaries = [[22.1, 21.9], [17.8, 17.2], [16.1, 15.9]]
         qa = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0]
         folder = "batch11"
@@ -292,14 +295,14 @@ if __name__ == '__main__':
 
 
     if use_case == "synthetic":
-        drawing = wd + "digiemine/techdraw/drawings/Turm.pdf"
+        drawing = cwd + "/techdraw/drawings/Turm.pdf"
         boundaries = [[22.05, 21.9], [17.85, 17.15], [16.05, 15.95]]
         file_ts = "data/measuring_intimeseries_running.csv"
         folder = "running"
 
     name = re.findall("\/(\w*\.\w*)", drawing)
-    path = wd + "digiemine/timesequence/" + folder + "/"
-    #get_infos(file_ts, use_case)
+    path = cwd + "/timesequence/" + folder + "/"
+    get_infos(file_ts, use_case)
     id = "uuid"
     results = ['ok', 'nok']
     result_column = 'status'
@@ -307,5 +310,5 @@ if __name__ == '__main__':
 
     variable_interest = "value"
     rulets, ruledem = ts.main(file_ts,  use_case, id, variable_result, results, result_column, variable_interest)
-    # visualize_on_drawing(drawing, file_tol, ruledem, use_case)
+    visualize_on_drawing(drawing, file_tol, ruledem, use_case)
 

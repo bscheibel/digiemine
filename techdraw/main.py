@@ -16,14 +16,17 @@ import techdraw.order_bounding_boxes_in_each_block as order_bounding_boxes_in_ea
 import techdraw.clustering_precomputed_dbscan as dbscan
 import techdraw.read_from_clustered_merged as read_from_clustered_merged
 import techdraw.organize_drawing_according_to_details_new as organize_drawing_according_to_details_new
-import redis
+#import redis
 import json
 import sys
 import csv
 import numpy as np
 
+import os
+cwd = os.getcwd()
 
-config_path = "/home/beatescheibel/PycharmProjects/digiemine/techdraw"
+
+config_path = cwd + "/techdraw"
 
 
 def distance_knn(dm):
@@ -111,7 +114,7 @@ if __name__ == "__main__":
             db = sys.argv[3]
         except:
             uuid = "1234"
-            filename = "/home/beatescheibel/PycharmProjects/digiemine/techdraw/temporary/drawings/GV_12.PDF"
+            filename = cwd + "/techdraw/temporary/drawings/GV_12.PDF"
             db = "localhost"
 
         try:
