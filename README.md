@@ -1,27 +1,36 @@
 # digiemine
 
-
-fedora 39
-
-pandas
-scikit-learn
-tsfresh
-swifter
-fitz
-
-
-
 Requirements:
 
-    OS: Fedora 34
+    OS: fedora 39
     Python: version 3.9.6
     Python packages:
-        pandas==1.2.0
-        numpy==1.20.1
-        scikit_learn==0.24.0
-        tsfresh==0.18.0
-
+            pandas
+            scikit-learn
+            tsfresh
+            swifter
+            fitz
+            fronted
 These packages can be installed using pip, the version is important (especially for tsfresh).
+
+
+edt_ts :
+edt:
+techdraw:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 The folder 'data' includes csv files for the running example as well as the manufacturing use case. The manufacturing use case data was originally in yaml form, converted to XES and then to csv. The full results, including the baseline results, can be seen in result_{running_example, manufacturing}.txt
 
