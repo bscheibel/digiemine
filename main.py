@@ -11,95 +11,65 @@ from edt_ts import time_series as ts
 import fitz
 import json
 
-def remove_quotes(string):
-    string = string.replace("'", "")
-    return string
-def split_string(string):
-    newString = string.split()
-    finalValue = newString[1]
-    return finalValue
 def get_times(fp,data):
     timeValue = -1
     for cnt, line in enumerate(fp):
         if 'value:' in line:
             if line.strip() != 'value: active':
                 timeValue = cnt + 1
-                measureValue = float(split_string(line.strip()))
+                measureValue = float(line.strip().split()[1])
         if cnt == timeValue:
-            measureTime = split_string(line.strip())
-            measureTime = remove_quotes(measureTime)
-            newValue = dateutil.parser.parse(measureTime)
+            timev = line.strip().split()[1].replace("'", "")
+            newValue = dateutil.parser.parse(timev)
             timestamp = datetime.timestamp(newValue)
             data['measures'].append({
                 'value': measureValue,
                 'timestamp': timestamp
             })
-def get_times_new(fp,data):
-    for cnt, line in enumerate(fp):
-        if 'value' in line:
-            if line.strip() != 'value: active':
-                val =line.strip()
-                l = val.split()
-                try:
-                    time = l[3].split("=>")[1][:-1]
-                    time = time[1:-1]
-                    measureValue = float(l[2].split("=>")[1][:-1])
-                    newValue = dateutil.parser.parse(time)
-                    timestamp = datetime.timestamp(newValue)
-                    data['measures'].append({
-                        'value': measureValue,
-                        'timestamp': timestamp
-                    })
-                except:
-                    pass
-def get_td_tolerances(drawing):
+
+def get_tolerances(drawing):
     uuid = str(random.randint(1000, 9999))
     db = "localhost"
     eps = 1
     result = digiedraw.main(uuid,drawing,db,eps)
-    td_tolerances = []
     result = json.loads(result)
     result = result["No details"]
-    for k in result:
-        td_tolerances.append(k)
-    return result #otherwise return td_tolerances
-def extract_boundaries(td_tolerances):
     boundary = []
     bound_dict = {}
     count = 1
-    for tol in td_tolerances:
+    for tol in result:
         tol_list = re.findall(r'\d+\.\d+', tol)
         if tol_list:
-            maxi = max(tol_list)
+            maximum = max(tol_list)
             if len(tol_list) == 2:
-                mini = min(tol_list)
-                up = float(maxi) + float(mini)
-                down = float(maxi) - float(mini)
+                minimum = min(tol_list)
+                up = float(maximum) + float(minimum)
+                down = float(maximum) - float(minimum)
                 boundary.append([up, down])
-                bound_dict[str(tol)]= {"tol": {"bound"+str(count): up, "bound"+str(count+1):down}, "dims": td_tolerances[tol]}
-
+                bound_dict[str(tol)]= {"tol": {"boundary"+str(count): up, "boundary"+str(count+1):down}, "dims": result[tol]}
             elif len(tol_list) == 3:
                 temp = []
                 for t in tol_list:
-                    if t != maxi:
+                    if t != maximum:
                         if float(t) == 0:
-                            temp.append(float(maxi))
+                            temp.append(float(maximum))
                         else:
                             sign = tol.split(t)[0]
                             sign = sign[-2]
                             if "+" in sign:
-                                val = float(maxi) + float(t)
+                                val = float(maximum) + float(t)
                             elif "-" in sign:
-                                val = float(maxi) - float(t)
+                                val = float(maximum) - float(t)
                             temp.append(val)
                 up = max(temp)
                 down = min(temp)
                 boundary.append([up, down])
-                bound_dict[str(tol)]= {"tol": {"boundary"+str(count): up, "boundary"+str(count+1):down}, "dims": td_tolerances[tol]}
+                bound_dict[str(tol)]= {"tol": {"boundary"+str(count): up, "boundary"+str(count+1):down}, "dims": result[tol]}
         count +=2
     boundary = np.around(boundary, 3)
     return boundary, bound_dict
-def getRelevantFiles(path,val):
+
+def get_file_names(path,val):
     get_super_uuid = "Spawn GV12 Production"
     name = []
     inst = []
@@ -122,41 +92,6 @@ def getRelevantFiles(path,val):
                         name.append([sname,tname])
                         inst.append([sinst, tinst]) #erstes instanz vom gv 12 spawn productin process, zweites element von measuring prozess
     return name,inst
-def data_preparation(file,path,type):
-    if '.yaml' in file:
-        openfile = path + file
-        data = {}
-        stream = open(openfile)
-        docs = yaml.load_all(stream,Loader=yaml.Loader)
-        for doc in docs:
-            for k, v in doc.items():
-                try:
-                    if (k == 'log'):
-                        instance = v['trace']['concept:name']
-                    if (k == 'event'):
-                        try:
-                            qr = v['data']['data_values']['qr']
-                        except KeyError:
-                            qr = "dummy"
-                            #pass
-                except TypeError:
-                    continue
-        data['qr'] = qr
-        data['instance'] = instance
-        data['measures'] = []
-        with open(openfile) as fp:
-            if type == "new":
-                get_times_new(fp,data)
-            else:
-                get_times(fp,data)
-            data["measures"].sort(key=lambda d: d["timestamp"])
-            firsTime = data["measures"][0]["timestamp"] * 1000
-            for i in data["measures"]:
-                cmd = i["timestamp"] * 1000
-                otherInt = cmd - firsTime
-                i["timestamp"] = int(otherInt)
-            final = json.dumps(data,indent=4)
-    return final
 
 def get_status(file,path):
     status = "ok"
@@ -188,10 +123,37 @@ def get_status(file,path):
                     continue
     return status
 
-
 def get_infos_from_logs(name, use_case):
-    file_measuring = name[1] + ".xes.yaml"
-    data = data_preparation(file_measuring, path, "old")
+    file = name[1] + ".xes.yaml"
+    if '.yaml' in file:
+        openfile = path + file
+        data = {}
+        stream = open(openfile)
+        docs = yaml.load_all(stream, Loader=yaml.Loader)
+        for doc in docs:
+            for k, v in doc.items():
+                try:
+                    if (k == 'log'):
+                        instance = v['trace']['concept:name']
+                    if (k == 'event'):
+                        try:
+                            qr = v['data']['data_values']['qr']
+                        except KeyError:
+                            qr = "na"
+                except TypeError:
+                    continue
+        data['qr'] = qr
+        data['instance'] = instance
+        data['measures'] = []
+        with open(openfile) as fp:
+            get_times(fp, data)
+            data["measures"].sort(key=lambda d: d["timestamp"])
+            firsTime = data["measures"][0]["timestamp"] * 1000
+            for i in data["measures"]:
+                cmd = i["timestamp"] * 1000
+                otherInt = cmd - firsTime
+                i["timestamp"] = int(otherInt)
+            data = json.dumps(data, indent=4)
     file_super = name[0] + ".xes.yaml"
     if use_case!="turm":
         status = get_status(file_super, path)
@@ -214,11 +176,10 @@ def get_infos(file_ts, use_case):
     if use_case=="turm":
         boundaries = [[22.1, 21.9], [17.8, 17.2], [16.1, 15.9]]
     else:
-        td_tolerances = get_td_tolerances(drawing=drawing)
-        boundaries, bound_dict = extract_boundaries(td_tolerances)
+        boundaries, bound_dict = get_tolerances(drawing=drawing)
         with open("data/"+ use_case+"tolerances_extracted.txt", "w") as outfile:
             json.dump(bound_dict, outfile)
-    names, inst = getRelevantFiles(path, "Measuring")
+    names, inst = get_file_names(path, "Measuring")
     df_timeseries = pd.DataFrame(columns=["value", "timestamp", "status", "uuid"])
 
     with open("archive/measuring_results.csv", "w") as f:

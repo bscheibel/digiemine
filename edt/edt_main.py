@@ -20,7 +20,7 @@ import sys
 from edt import tree_code as tc
 import re
 
-def create_features(df, result_column, names):
+def create_features(df, names):
     new_names = []
     names_bounds = [i for i in df.columns if "bound" in i and not "list" in i and not "last" in i]
     df_new = df[names_bounds]
@@ -42,48 +42,6 @@ def create_features(df, result_column, names):
                 count += 1
     return df, new_names
 
-def create_features_onlybounds(df, result_column, names):
-    new_names = []
-    names_bounds = [i for i in df.columns if "bound" in i]
-    df_new = df[names_bounds]
-    names_notbounds = [i for i in df.columns if not "bound" in i]
-    df_new1 = df[names_notbounds]
-    comparison_operators = ['<', '>', '<=', '>=']
-    count = 0
-    for name1 in df_new:
-        if name1 not in names:
-            continue
-        for name2 in df_new1:
-            if name1 == name2 or name2 not in names:
-                continue
-            for op in comparison_operators:
-                expression = "row." + name1 + op + "row." + name2
-
-                new_name = str(expression)
-                df[expression] = df.swifter.apply(lambda row: (eval(expression)), axis=1)
-                new_names.append(new_name)
-                count += 1
-    return df, new_names
-
-def create_features_withoutbounds(df, result_column, names):
-    new_names = []
-    names_bounds = [i for i in df.columns]
-    df_new = df[names_bounds]
-    names_notbounds = [i for i in df.columns]
-    df_new1 = df[names_notbounds]
-    comparison_operators = ['<', '>', '<=', '>=']
-    for name1 in df_new:
-        if name1 not in names:
-            continue
-        for name2 in df_new1:
-            for op in comparison_operators:
-                if name1 == name2 or name2 not in names:
-                    continue
-                expression = "row." + name1 + op + "row." + name2
-                new_name = str(expression)
-                df[expression] = df.apply(lambda row: (eval(expression)), axis=1)
-                new_names.append(new_name)
-    return df, new_names
 
 def define(input, result_column, combined=False):
     if isinstance(input, pd.DataFrame):
@@ -109,10 +67,7 @@ def define(input, result_column, combined=False):
 def run(df, result_column, names, combined):
     if(isinstance(result_column, (int, float))):
         df[result_column] = df[result_column].map(tc.int_to_string)
-    if combined:
-        df, new_names = create_features(df, result_column, names)
-    else:
-        df, new_names = create_features_onlybounds(df, result_column, names)
+    df, new_names = create_features(df, names)
     important_feat = new_names
     _, rules = tc.learn_tree(df, result_column, important_feat)
     return rules

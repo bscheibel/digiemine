@@ -39,8 +39,7 @@ def prepare_dataset(df, id, variable_interest):
 
 
 def generate_interval_features(df, n, variable_interest):
-    new_names = ["segment" + str(inter) for inter in range(1, n + 1)]  #[str("int")+ str(n+1) +  davor auch moeglich damit man weiß welches intervall
-    #new_names = [variable_interest + str(inter) for inter in range(1, n + 1)]  # [str("int")+ str(n+1) +  davor auch moeglich damit man weiß welches intervall
+    new_names = ["segment" + str(inter) for inter in range(1, n + 1)]
 
     def split(x, n):
         arrayss = np.array_split(x, n)
@@ -295,6 +294,7 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
     print("\n---------------------------------------------------------------------------------\nedt-ts and bdt combined")
     rules_digiemine = em.define(df_og, result_column, True)
     return rules_ts, rules_digiemine
+
 def main(file, use_case, id, variable_result, results, result_column, variable_interest):
 
     df = pd.read_csv(file)
