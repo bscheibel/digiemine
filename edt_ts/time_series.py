@@ -24,7 +24,6 @@ import swifter
 
 def prepare_dataset(df, id, variable_interest):
     df = df.groupby(id).agg({list, "last"})
-    print(df)
     df.columns = [' '.join(col).replace(" ", "") for col in df.columns]
     df[variable_interest + 'list'] = df[variable_interest + 'list'].swifter.apply(np.array)
     X = []
@@ -236,7 +235,8 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
         print("Calculated interval-based features...")
 
         # pattern based
-        candidate_thresholds = get_distribution(array_ok, array_nok)
+
+        # candidate_thresholds = get_distribution(array_ok, array_nok)
         # df, var_pattern = create_latent_variables(candidate_thresholds, df, variable_interest)  ##FIXME: INCLUDE PATTERN BASED
         # try:
         #    accuracy, var_pattern, _ = tc.learn_tree(df, result_column, var_pattern, variable_result)
@@ -248,14 +248,15 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
         #    print("ERROR PATTERN BASED FEATURES", e)
         #    pass
 
-        #global features
-        df_newFeatures = df_newFeatures.dropna().reset_index()
+        # #global features
+        # df_newFeatures = df_newFeatures.dropna().reset_index()
         # try:                                                                                                             ##FIXME: add global features again
         #     global_features = generate_global_features(df_newFeatures, y_var, id, variable_interest)
         #     df = pd.merge(df, global_features, on=id)
         # except Exception as e:
         #     print("ERROR GLOBAL FEATURES", e)
         #     pass
+
         to_drop = []
         for d in df.columns:
             if np.inf in df[d].values:

@@ -69,8 +69,11 @@ def get_tolerances(drawing):
     boundary = np.around(boundary, 3)
     return boundary, bound_dict
 
-def get_file_names(path,val):
-    get_super_uuid = "Spawn GV12 Production"
+def get_file_names(path,val, use_case):
+    if use_case=="gv12":
+        get_super_uuid = "Spawn GV12 Production"
+    if use_case=="turm":
+        get_super_uuid = "Spawn Turm Production"
     name = []
     inst = []
     for r, d, f in os.walk(path):
@@ -90,7 +93,7 @@ def get_file_names(path,val):
                         tname = re.search(r"\((.*?)\)", string).group(1)
                         tinst = string.split("-",-1)[-1]
                         name.append([sname,tname])
-                        inst.append([sinst, tinst]) #erstes instanz vom gv 12 spawn productin process, zweites element von measuring prozess
+                        inst.append([sinst, tinst])
     return name,inst
 
 def get_status(file,path):
@@ -179,15 +182,17 @@ def get_infos(file_ts, use_case):
         boundaries, bound_dict = get_tolerances(drawing=drawing)
         with open("data/"+ use_case+"tolerances_extracted.txt", "w") as outfile:
             json.dump(bound_dict, outfile)
-    names, inst = get_file_names(path, "Measuring")
+    names, inst = get_file_names(path, "Measuring", use_case)
     df_timeseries = pd.DataFrame(columns=["value", "timestamp", "status", "uuid"])
 
     with open("archive/measuring_results.csv", "w") as f:
         for name in names:
              df_ts = get_infos_from_logs(name, use_case)
              df_timeseries = df_timeseries.append(df_ts)
-
-    add_colums = ["bound1", "bound2", "bound3", "bound4", "bound5", "bound6", "bound7", "bound8", "bound9", "bound10", "bound11", "bound12"]
+    if use_case == "gv12":
+        add_colums = ["bound1", "bound2", "bound3", "bound4", "bound5", "bound6", "bound7", "bound8", "bound9", "bound10", "bound11", "bound12"]
+    if use_case == "turm":
+        add_colums = ["bound1", "bound2", "bound3", "bound4", "bound5", "bound6"]
     boundaries = [item for sublist in boundaries for item in sublist]
     count = 0
     for col in add_colums:
@@ -269,16 +274,17 @@ def visualize_on_drawing(drawing, file_tol, str_rule, use_case):
 
 
 if __name__ == '__main__':
-    use_case = "gv12"
+    use_case = "synthetic"
+    wd = "/home/beatescheibel/PycharmProjects/"
 
     if use_case == "gv12":
-        drawing = "/home/beatescheibel/PycharmProjects/digiemine/techdraw/drawings/GV_12.PDF"
+        drawing = wd + "digiemine/techdraw/drawings/GV_12.PDF"
         folder = "batch14"
         file_ts = "data/measuring_intimeseriesGV12.csv"
         file_tol = "data/gv12tolerances_extracted.txt"
 
     if use_case == "turm":
-        drawing = "/home/beatescheibel/PycharmProjects/digiemine/techdraw/drawings/Turm.pdf"
+        drawing = wd + "/digiemine/techdraw/drawings/Turm.pdf"
         boundaries = [[22.1, 21.9], [17.8, 17.2], [16.1, 15.9]]
         qa = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0]
         folder = "batch11"
@@ -286,14 +292,14 @@ if __name__ == '__main__':
 
 
     if use_case == "synthetic":
-        drawing = "/home/beatescheibel/PycharmProjects/digiemine/techdraw/drawings/Turm.pdf"
+        drawing = wd + "digiemine/techdraw/drawings/Turm.pdf"
         boundaries = [[22.05, 21.9], [17.85, 17.15], [16.05, 15.95]]
         file_ts = "data/measuring_intimeseries_running.csv"
         folder = "running"
 
     name = re.findall("\/(\w*\.\w*)", drawing)
-    path = '/home/beatescheibel/PycharmProjects/digiemine/timesequence/' + folder + '/'
-    get_infos(file_ts, use_case)
+    path = wd + "digiemine/timesequence/" + folder + "/"
+    #get_infos(file_ts, use_case)
     id = "uuid"
     results = ['ok', 'nok']
     result_column = 'status'
@@ -301,5 +307,5 @@ if __name__ == '__main__':
 
     variable_interest = "value"
     rulets, ruledem = ts.main(file_ts,  use_case, id, variable_result, results, result_column, variable_interest)
-    visualize_on_drawing(drawing, file_tol, ruledem, use_case)
+    # visualize_on_drawing(drawing, file_tol, ruledem, use_case)
 
