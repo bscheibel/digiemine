@@ -21,7 +21,8 @@ The folder 'data' includes csv files for the use cases. The manufacturing use ca
 The full results - including the PDF file of the highlighted engineering drawing - can be seen in the 'result' folder.
 
 To start the script in terminal: 
-    python main.py {synthetic, valve, turm} 
+
+        python main.py {synthetic, valve, turm} 
     
 Per default, the 'valve' use case is started. If one of the existing use cases is to be reproduced, just enter the use case name e.g. {synthetic, valve, turm}
 
