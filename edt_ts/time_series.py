@@ -46,7 +46,7 @@ def generate_interval_features(df, n, variable_interest):
 
     df[new_names] = (df.swifter.apply(lambda row: split(row[variable_interest], n), axis=1, result_type="expand"))
     for name in new_names:
-        df[name + "_min"] = df.swifter.apply(lambda row: min(row[name], default=row[name]), axis=1)
+        df[name + "_min"] = df.swifter.apply(lambda row: min(row[name], default=row[name]), axis=1, dtype)
         df[name + "_max"] = df.swifter.apply(lambda row: max(row[name], default=row[name]), axis=1)
         df[name + "_mean"] = df.swifter.apply(lambda row: np.mean(row[name]), axis=1)
         df[name + "_wthavg"] = df.swifter.apply(lambda row: np.average(row[name]), axis=1)
@@ -283,7 +283,7 @@ def pipeline(use_case, df, id, variable_result,results,result_column, variable_i
             y_var_bool.append(0)
     df_corr = df_og
     df_corr["result"] = y_var_bool
-    corr = df_corr.corr()["result"].abs()
+    corr = df_corr.corr(numeric_only=True)["result"].abs()
     corr = corr[corr > 0.1]
     colum = corr.index
     df_onlyrel = df_corr[colum]
