@@ -18,7 +18,7 @@ DigiEMine also integrates code from the following repositories (integrated in fo
     techdraw: https://github.com/DigiEDraw/extraction
 
 The folder 'data' includes csv files for the use cases. The manufacturing use case data was originally in yaml form, converted to csv during the first part of the algorithm ('get_infos') from the original log data which can be found in the folder 'timesequence'.
-The full results can be seen in the 'result' folder.
+The full results - including the PDF file of the highlighted engineering drawing - can be seen in the 'result' folder.
 
 To start the script in terminal: python main.py {synthetic, valve, turm}. Per default, the 'valve' use case is started.
 
