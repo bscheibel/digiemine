@@ -24,8 +24,10 @@ import dateutil
 from datetime import datetime
 from edt_ts import time_series as ts
 import fitz
+import sys
 import json
-
+import warnings
+warnings.simplefilter(action='ignore', category=pd.errors.PerformanceWarning)
 import os
 cwd = os.getcwd()
 
@@ -88,7 +90,7 @@ def get_tolerances(drawing):
     return boundary, bound_dict
 
 def get_file_names(path,val, use_case):
-    if use_case=="gv12":
+    if use_case=="valve":
         get_super_uuid = "Spawn GV12 Production"
     if use_case=="turm":
         get_super_uuid = "Spawn Turm Production"
@@ -193,7 +195,7 @@ def get_infos_from_logs(name, use_case):
     df["uuid"] = instance
     return df
 
-def get_infos(file_ts, use_case):
+def get_infos(file_ts, use_case, drawing):
     if use_case=="turm":
         boundaries = [[22.1, 21.9], [17.8, 17.2], [16.1, 15.9]]
     else:
@@ -207,7 +209,7 @@ def get_infos(file_ts, use_case):
         for name in names:
              df_ts = get_infos_from_logs(name, use_case)
              df_timeseries = pd.concat([df_timeseries, df_ts])
-    if use_case == "gv12":
+    if use_case == "valve":
         add_colums = ["bound1", "bound2", "bound3", "bound4", "bound5", "bound6", "bound7", "bound8", "bound9", "bound10", "bound11", "bound12"]
     if use_case == "turm":
         add_colums = ["bound1", "bound2", "bound3", "bound4", "bound5", "bound6"]
@@ -292,10 +294,12 @@ def visualize_on_drawing(drawing, file_tol, str_rule, use_case):
 
 
 if __name__ == '__main__':
-    use_case = "gv12"
-    #wd = cwd + "/home/beatescheibel/PycharmProjects/"
+    try:
+        use_case = sys.argv[1]
+    except:
+        use_case = "valve"
 
-    if use_case == "gv12":
+    if use_case == "valve":
         drawing = cwd + "/techdraw/drawings/GV_12.PDF"
         folder = "batch14"
         file_ts = "data/measuring_intimeseriesGV12.csv"
@@ -303,27 +307,28 @@ if __name__ == '__main__':
 
     if use_case == "turm":
         drawing = cwd + "/techdraw/drawings/Turm.pdf"
-        boundaries = [[22.1, 21.9], [17.8, 17.2], [16.1, 15.9]]
-        qa = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0]
         folder = "batch11"
         file_ts = "data/measuring_intimeseries_turm.csv"
 
 
     if use_case == "synthetic":
         drawing = cwd + "/techdraw/drawings/Turm.pdf"
-        boundaries = [[22.05, 21.9], [17.85, 17.15], [16.05, 15.95]]
         file_ts = "data/measuring_intimeseries_running.csv"
         folder = "running"
 
     name = re.findall("\/(\w*\.\w*)", drawing)
     path = cwd + "/timesequence/" + folder + "/"
-    get_infos(file_ts, use_case)
     id = "uuid"
     results = ['ok', 'nok']
     result_column = 'status'
     variable_result = 'nok'
-
     variable_interest = "value"
-    rulets, ruledem = ts.main(file_ts,  use_case, id, variable_result, results, result_column, variable_interest)
-    visualize_on_drawing(drawing, file_tol, ruledem, use_case)
+    
+    if use_case == "valve":
+        get_infos(file_ts, use_case, drawing)
+        rulets, ruledem = ts.main(file_ts,  use_case, id, variable_result, results, result_column, variable_interest)
+        visualize_on_drawing(drawing, file_tol, ruledem, use_case)
+    else:
+        rulets, ruledem = ts.main(file_ts,  use_case, id, variable_result, results, result_column, variable_interest)
+
 
